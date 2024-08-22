@@ -1,0 +1,31 @@
+default_language_version:
+  python: python3.12
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-json
+        name: Checking .json files are parseable
+      - id: check-yaml
+        name: Checking .yaml files are parseable
+      - id: check-toml
+        name: Checking .toml files are parseable
+      - id: trailing-whitespace
+        name: Removing trailing whitespaces
+      - id: end-of-file-fixer
+        name: Ensuring files are either empty or ending in a newline
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 24.2.0
+    hooks:
+      - id: black
+        name: Ensuring Python code is PEP8-compliant using Black
+  - repo: https://github.com/pycqa/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        name: Sorting imports in Python files using isort
+  # - repo: https://github.com/kynan/nbstripout
+  #   rev: 0.7.1
+  #   hooks:
+  #     - id: nbstripout

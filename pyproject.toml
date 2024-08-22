@@ -1,0 +1,81 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "unique"
+authors = [
+	{name = "Raquel Rodriguez-Perez", email = "raquel.rodriguez_perez@novartis.com"},
+	{name = "Jessica Lanini", email = "jessica.lanini@novartis.com"},
+	{name = "Minh Tam Davide Huynh", email = "tam.huynh@novartis.com"},
+	{name = "Gaetano Scebba", email = "gaetano.scebba@novartis.com"},
+]
+readme = "README.md"
+classifiers = [
+	"Development Status :: 3 - Alpha",
+	"Intended Audience :: Developers",
+	"Intended Audience :: Education",
+	"Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+	"Private :: Do Not Upload",
+    "Programming Language :: Python",
+	"Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+	"Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+	"Topic :: Scientific/Engineering",
+	"Topic :: Scientific/Engineering :: Mathematics",
+	"Topic :: Scientific/Engineering :: Artificial Intelligence",
+	"Topic :: Software Development",
+	"Topic :: Software Development :: Libraries",
+	"Topic :: Software Development :: Libraries :: Python Modules",
+]
+version = "0.2.2"
+license = {file="LICENSE.md"}
+description = "UNIQUE is a Python package for uncertainty quantification and benchmarking of ML models' predictions."
+requires-python = ">=3.8,<=3.12.1"
+dependencies = [
+	"colorcet>=3.0,<=3.0.1",
+	"ipykernel>=6.29,<=6.29.2",
+	"jinja2>=3.1,<=3.1.3",
+	"matplotlib>=3.6,<=3.8.2",
+	"numpy>=1.19,<=1.26.4",
+	"pandas>=2.0,<=2.2.0",
+	"pyarrow<=16.1.0",
+	"pyyaml>=6.0,<=6.0.1",
+	"rdkit==2023.09.1",
+	"ruamel.yaml>=0.18",
+	"scikit-learn>=1.3,<=1.4.0",
+	"scipy>=1.10,<=1.12.0",
+	"seaborn>=0.13,<=0.13.2",
+	"shapely>=2.0,<=2.0.2",
+	"statsmodels>=0.13.3,<=0.14.2",
+	"tqdm>=4.65,<=4.66.2",
+]
+
+[project.urls]
+Source = "https://bitbucket.prd.nibr.novartis.net/projects/UN/repos/unique/browse"
+
+[project.optional-dependencies]
+dev = [
+	"black==24.2.0",
+    "flit>=3.2,<4",
+	"genbadge>=1.1.1",
+	"isort==5.13.2",
+	"nbconvert==7.16.0",
+	"pre-commit==3.6.2",
+	"pytest>=7.2",
+	"pytest-cov>=4.1",
+	"tox>=3.27,<=4.12.1",
+    "tox-conda>=0.10,<=0.10.2",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py38", "py39", "py310", "py311", "py312"]
+
+[tool.isort]
+profile = "black"

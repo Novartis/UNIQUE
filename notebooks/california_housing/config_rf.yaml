@@ -1,0 +1,82 @@
+#######
+# I/O #
+#######
+# Path to the prepared input dataset
+data_path: "</path/to/unique>/unique/notebooks/california_housing/unique_input_data.json" # REPLACE WITH YOUR PATH TO THE SYNTHETIC EXAMPLE
+# Path to the output folder where to save UNIQUE's outputs
+output_path: "</path/to/output/folder>" # REPLACE WITH YOUR PATH TO THE OUTPUT FOLDER
+
+########
+# Data #
+########
+# Name of the column containing the unique data IDs
+id_column_name: "ID"
+# Name of the column containing the labels
+labels_column_name: "label"
+# Name of the column containing the original model's predictions
+predictions_column_name: "rf_predictions"
+# Name of the column containing the subset specification ("TRAIN", "TEST", "CALIBRATION")
+which_set_column_name: "which_set"
+# Name of the original model
+model_name: "RF"
+# Specify which task your model solves: either "regression" or "classification"
+problem_type: "regression"
+# Modality by which to sum variances and distance-based UQ methods. Check `unique.utils.uncertainty_utils.AnalyticsMode` for more details.
+mode: "compact"
+
+#############
+# UQ Inputs #
+#############
+# List of UNIQUE InputTypes specifying the column name of the inputs and the UQ methods to compute for each of them (if none are specified, all supported UQ method for each InputType will be computed)
+# Note: it needs to be a list, even if only one input type is specified (note the hyphens)
+inputs_list:
+    # RealValuedFeaturesInputType are features that can have `int` or `float` values and can be represented as a single value or grouped as a list/array of features for each datapoint
+  - FeaturesInputType:
+      # Name of the column containing the features (for example here we assume a single value for each datapoint)
+      column_name: "feature"
+      metrics:
+        - "manhattan_distance"
+        - "euclidean_distance"
+
+  - ModelInputType:
+      # Name of the column containing the variance
+      column_name: "rf_variances"
+      # No metrics are specified here, which means that all supported UQ metrics for this input type will be computed
+
+###################
+# UQ Error Models #
+###################
+# List of UNIQUE ErrorModels specifying available model's hyperparameters as keyword-arguments
+# You can specify as many error models as you want, even the same type but with different hyperparameters (GridSearch is not yet implemented in UNIQUE)
+# Note: it needs to a list, even if only one error model is specified (note the hyphens)
+error_models_list:
+    # UniqueRandomForestRegressor is a RF regressor trained to predict the error between the original model's predictions and data labels
+  - UniqueRandomForestRegressor:
+      # All available arguments to the model can be specified here. See each model's documentation for the full list of arguments. If no hyperparameters are specified, UNIQUE will use the default ones
+      max_depth: 10
+      n_estimators: 50
+      # List of error types to use as target values (note the hyphen). For each error type, a separate model will be built to predict it
+      # Supported errors are:
+      # "l1" (=absolute error), "l2" (squared error), "unsigned"
+      error_type_list:
+        - "l1"
+  - UniqueLASSO:
+      alpha: 0.1
+
+#######################
+# Evaluation Settings #
+#######################
+# Whether to plot each UQ method's evaluation plots. Note: the plots of the best UQ methods are always saved (displaying depends on `display_outputs`)
+individual_plots: false
+# Whether to plot the summary plots with all UQ methods. Note: the summary plots are always saved (displaying depends on `display_outputs`)
+summary_plots: true
+# Whether to save the enabled plots in the output folder
+save_plots: false
+# Whether to evaluate the UQ methods against the TEST set only. If "False", evaluation will be carried out for "TRAIN" and "CALIBRATION" sets as well
+evaluate_test_only: true
+# Whether to display the plots to screen. Only works if running in a JupyterNotebook cell
+display_outputs: true
+# Number of bootstrapping samples to run. Note: bootstrapping to determine the best UQ metric is ALWAYS run unless the private attribute `Pipeline._bootstrap` is set to False.
+n_bootstrap: 500
+# Logging messages levels. If True, logger will output DEBUG level messages.
+verbose: false
