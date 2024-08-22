@@ -1,0 +1,4 @@
+# .gitattributes
+
+# Mark all Jupyter notebooks as documentation
+*.ipynb linguist-documentation
