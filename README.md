@@ -3,7 +3,7 @@
 A Python library for benchmarking uncertainty estimation and quantification methods for Machine Learning models predictions.
 
 ![Python](https://img.shields.io/badge/Python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12.1-blue)
-![version](https://img.shields.io/badge/Version-v0.2.2-green)
+![version](https://img.shields.io/badge/Version-v0.1.0-green)
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![codestyle](https://img.shields.io/badge/Code%20Style-black-000000.svg)](https://github.com/psf/black)
 
