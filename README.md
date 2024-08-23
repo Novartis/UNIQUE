@@ -367,7 +367,7 @@ UNIQUE is licensed under the BSD 3-Clause License. See the [LICENSE](./LICENSE) 
 For any questions or further details about the project, please get in touch with any of the following contacts:
 
 * **[Jessica Lanini](mailto:jessica.lanini@novartis.com?subject=UNIQUE)**
-* **[Minh Tam Davide Huynh](mailto:tamdavide.huynh@gmail.com?subject=UNIQUE)**
+* **[Minh Tam Davide Huynh]**
 * **[Gaetano Scebba](mailto:gaetano.scebba@novartis.com?subject=UNIQUE)**
 * **[Nadine Schneider](mailto:nadine-1.schneider@novartis.com?subject=UNIQUE)**
 * **[Raquel Rodríguez-Pérez](mailto:raquel.rodriguez_perez@novartis.com?subject=UNIQUE)**
