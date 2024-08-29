@@ -79,7 +79,7 @@ make env && make jupyter-kernel
 conda activate .conda/unique
 # Setup precommit hooks
 make pre-commit
-# Install SpeAKit
+# Install UNIQUE
 pip install -e .
 # Use `pip install -e .[dev]` to also install optional dependencies
 ```
