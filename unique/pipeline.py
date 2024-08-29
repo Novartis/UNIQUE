@@ -199,7 +199,9 @@ class Pipeline:
 
         # Initialize inputs
         self._initialize_inputs()
-        self.logger.debug(f"Output files stored in .../{self.output_path.relative_to(self.output_path.parent.parent)}")
+        self.logger.debug(
+            f"Output files stored in .../{self.output_path.relative_to(self.output_path.parent.parent)}"
+        )
 
     @classmethod
     def from_config(cls, config_path: Union[Path, str]):
@@ -221,7 +223,6 @@ class Pipeline:
                     f'Unrecognized field "{field}" in provided config file.'
                     f"Allowed fields: {CONFIG_FIELDS}."
                 )
-
 
         return cls(
             data=Path(config["data_path"]),
@@ -1183,7 +1184,9 @@ class Pipeline:
                 display_outputs=display_outputs,
             )
 
-            self.logger.info(f"Summary plots saved to: .../{Path(output_dir).relative_to(Path(output_dir).parent.parent) / 'summary'}.")
+            self.logger.info(
+                f"Summary plots saved to: .../{Path(output_dir).relative_to(Path(output_dir).parent.parent) / 'summary'}."
+            )
 
         # Print best UQ methods per evaluation type
         best_method_str = [

@@ -40,7 +40,6 @@ from unique.evaluation.evaluation_metrics import (
 from unique.utils import is_running_in_jupyter_notebook
 
 
-
 def apply_uq_inference(
     input_data: pd.DataFrame,
     bins: pd.DataFrame,

@@ -30,7 +30,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 from .base import UniqueErrorModel
 from .models.LASSO import UniqueLASSO
-
 from .models.random_forest_regressor import UniqueRandomForestRegressor
 
 __all__ = [
