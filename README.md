@@ -4,7 +4,7 @@
 </figure>
 
 ![Python](https://img.shields.io/badge/Python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12.1-blue)
-![version](https://img.shields.io/badge/Version-v0.1.0-green)
+![version](https://img.shields.io/badge/Version-v0.2.2-green)
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-red.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 
