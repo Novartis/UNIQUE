@@ -5,10 +5,10 @@ build-backend = "flit_core.buildapi"
 [project]
 name = "unique"
 authors = [
-	{name = "Raquel Rodriguez-Perez", email = "raquel.rodriguez_perez@novartis.com"},
-	{name = "Jessica Lanini", email = "jessica.lanini@novartis.com"},
-	{name = "Minh Tam Davide Huynh", email = "tam.huynh@novartis.com"},
-	{name = "Gaetano Scebba", email = "gaetano.scebba@novartis.com"},
+	{name = "Raquel Rodriguez-Perez"},
+	{name = "Jessica Lanini"},
+	{name = "Minh Tam Davide Huynh"},
+	{name = "Gaetano Scebba"},
 ]
 readme = "README.md"
 classifiers = [
@@ -16,7 +16,7 @@ classifiers = [
 	"Intended Audience :: Developers",
 	"Intended Audience :: Education",
 	"Intended Audience :: Science/Research",
-    "License :: OSI Approved :: Apache Software License",
+    "License :: OSI Approved :: BSD License",
 	"Private :: Do Not Upload",
     "Programming Language :: Python",
 	"Programming Language :: Python :: 3.8",
@@ -57,7 +57,7 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://bitbucket.prd.nibr.novartis.net/projects/UN/repos/unique/browse"
+Source = "https://github.com/Novartis/UNIQUE"
 
 [project.optional-dependencies]
 dev = [
@@ -65,10 +65,18 @@ dev = [
     "flit>=3.2,<4",
 	"genbadge>=1.1.1",
 	"isort==5.13.2",
+	"linkify-it-py==2.0.3",
+	"myst-nb>=1.1.0",
+	"myst-parser>=3,<=4",
 	"nbconvert==7.16.0",
 	"pre-commit==3.6.2",
 	"pytest>=7.2",
 	"pytest-cov>=4.1",
+    "sphinx>=7.3.7",
+    "sphinx-autoapi>=3.1.1",
+	"sphinx-autodoc2>=0.5.0",
+	"sphinx-book-theme>=1.1.2",
+    "sphinx-copybutton==0.5.2",
 	"tox>=3.27,<=4.12.1",
     "tox-conda>=0.10,<=0.10.2",
 ]
