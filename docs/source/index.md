@@ -9,7 +9,6 @@ myst:
          :align: center
 
          {{description}}
-
          :::
       logo_dark: |
          :::{figure} _static/unique_logo_dark_blue.png
@@ -18,7 +17,6 @@ myst:
          :align: center
 
          {{description}}
-
          :::
       version_badge: "![Version badge](https://img.shields.io/badge/Version-vUNIQUE-green)"
       # See: https://github.com/executablebooks/MyST-Parser/issues/279#issuecomment-752948379
@@ -64,13 +62,6 @@ getting_started/index
 examples/index
 indepth/index
 development/index
-:::
-
-# API Reference
-
-:::{toctree}
-:maxdepth: 4
-apidocs/index
 :::
 
 :::{image} ./_static/novartis_logo.png

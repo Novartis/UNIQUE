@@ -10,6 +10,7 @@ import unique
 
 project = "UNIQUE"
 copyright = "2024, Novartis Pharma AG"
+author = "Novartis Pharma AG"
 # author = 'Minh Tam Davide Huynh, Gaetano Scebba, Jessica Lanini, Raquel Rodriguez-Perez'
 version = str(unique.__version__)
 
