@@ -1,14 +1,11 @@
-![UNIQUE Logo](./.github/unique_logo_blue.png)
-
-A Python library for benchmarking uncertainty estimation and quantification methods for Machine Learning models predictions.
+<figure>
+  <img src=./docs/source/_static/unique_logo_blue.png alt="UNIQUE Logo">
+  <figcaption align=center><u><b>UN</b></u>certa<u><b>I</b></u>nty <u><b>QU</b></u>antification b<u><b>E</b></u>nchmark: a Python library for benchmarking uncertainty estimation and quantification methods for Machine Learning models predictions.</figcaption>
+</figure>
 
 ![Python](https://img.shields.io/badge/Python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12.1-blue)
 ![version](https://img.shields.io/badge/Version-v0.1.0-green)
-[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-[![codestyle](https://img.shields.io/badge/Code%20Style-black-000000.svg)](https://github.com/psf/black)
-
-
-# UNIQUE (UNcertaInty QUantification bEnchmark)
+[![License](https://img.shields.io/badge/License-BSD_3--Clause-red.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 
 ## Table of Contents
@@ -21,10 +18,7 @@ A Python library for benchmarking uncertainty estimation and quantification meth
   - [Prepare Your Pipeline](#prepare-your-pipeline)
 * [Usage](#usage)
   - [Examples](#examples)
-* [Overview of `UNIQUE`](#overview-of-unique)
-  - [Best UQ Method Selection](#best-uq-method-selection)
-  - [List of Available UQ Methods & Objects in `UNIQUE`](#list-of-available-uq-methods--objects-in-unique)
-  - [List of Evaluation Metrics](#list-of-evaluation-metrics)
+* [Deep Dive](#deep-dive)
 * [Contributing](#contributing)
 * [License](#license)
 * [Contacts & Acknowledgements](#contacts--acknowledgements)
@@ -36,10 +30,15 @@ A Python library for benchmarking uncertainty estimation and quantification meth
 
 `UNIQUE` is a model-agnostic tool, meaning that it does not depend on any specific ML model building platform or provides any  ML model training functionality. It is lightweight, because it only requires the user to input their model's inputs and predictions.
 
-![UNIQUE High Level Schema.png](./.github/schema_high_level.png)
+<figure>
+  <img src=./docs/source/_static/schema_high_level.png alt="UNIQUE High Level Schema">
+  <figcaption align=center>High-level schema of <code>UNIQUE</code>'s components.</figcaption>
+</figure>
 
 
 ## Installation
+
+![Python](https://img.shields.io/badge/Python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12.1-blue)
 
 `UNIQUE` is currently compatible with Python 3.8 through 3.12.1. To install the latest release and use the package as is, run the following in a compatible environment of choice:
 
@@ -51,6 +50,9 @@ pip install git+https://github.com/Novartis/UNIQUE.git
 > To create a dedicated virtual environment for `UNIQUE` using `conda`/`mamba` with all the required and compatible dependencies, check out: [For Developers](#for-developers).
 
 ### For Developers
+
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
+[![codestyle](https://img.shields.io/badge/Code%20Style-black-000000.svg)](https://github.com/psf/black)
 
 If you wish to work on the codebase itself, check first [how to best contribute to `UNIQUE`](./CONTRIBUTING.md).
 
@@ -64,7 +66,10 @@ git clone https://github.com/Novartis/UNIQUE.git ./unique
 cd unique
 ```
 
-The project uses [`mamba`](https://mamba.readthedocs.io/en/latest/index.html) for dependencies management, which is a faster drop-in replacement for [`conda`](https://conda.io/projects/conda/en/latest/user-guide/install/index.html). If you still wish to use `conda`, you can change the backend solver by adding `--solver=libmamba` to your `conda install` standard command ([see the docs](https://conda.github.io/conda-libmamba-solver/user-guide/#try-it-once)).
+The project uses [`mamba`](https://mamba.readthedocs.io/en/latest/index.html) for dependencies management, which is a faster drop-in replacement for [`conda`](https://conda.io/projects/conda/en/latest/user-guide/install/index.html).
+
+> [!TIP]
+> If you still wish to use `conda`, you can change the backend solver by adding `--solver=libmamba` to your `conda install` standard command ([see the docs](https://conda.github.io/conda-libmamba-solver/user-guide/#try-it-once)).
 
 To setup the project, run:
 
@@ -79,7 +84,11 @@ pip install -e .
 # Use `pip install -e .[dev]` to also install optional dependencies
 ```
 
-In this way, you will have access to the `UNIQUE` codebase and be able to make local modifications to the source code, within the `.conda/unique` environment that contains all the required dependencies. Additionally, if you use Jupyter Notebooks, the `unique-env` kernel will be available in the "Select kernel" menu of the JupyterLab/JupyterNotebook UI. Finally, when using `git` for code versioning, the predefined pre-commit hooks will be run against the commited files for automatic formatting and syntax checks.
+In this way, you will have access to the `UNIQUE` codebase and be able to make local modifications to the source code, within the `.conda/unique` environment that contains all the required dependencies.
+
+Additionally, if you use Jupyter Notebooks, the `unique` kernel will be available in the "Select kernel" menu of the JupyterLab/JupyterNotebook UI.
+
+Finally, when using `git` for code versioning, the predefined pre-commit hooks will be run against the commited files for automatic formatting and syntax checks.
 
 You can find out more about custom Jupyter kernels [here](https://ipython.readthedocs.io/en/stable/install/kernel_install.html) and pre-commit hooks [here](https://pre-commit.com/).
 
@@ -87,6 +96,8 @@ You can find out more about custom Jupyter kernels [here](https://ipython.readth
 ## Getting Started
 
 ### Prepare Your Dataset
+
+#### Input Data Preparation
 
 In order to use `UNIQUE` the user only needs to input a dataframe containing at the minimum the following columns:
 
@@ -98,10 +109,16 @@ In order to use `UNIQUE` the user only needs to input a dataframe containing at 
 > [!CAUTION]
 > Make sure to use exactly `TRAIN`, `TEST`, and `CALIBRATION` (all upper-case), as these values are hard-coded.
 
+#### Features Type Specification
+
 Then, depending on the UQ methods one wants to evaluate/use, one can add:
 
 - **Data features**: column(s) containing the feature(s) of each datapoint - e.g., the ones used for training the original ML model. These will be used, for example, to compute the distance between each datapoint in the feature's space (therefore, if you wish to aggregate different features together, you need to provide them as a single column comprising of arrays of length _n_, with _n_ being the number of features, one for each datapoint).
 - **Model outputs**: column(s) containing output(s) related to the original ML model. For example, it can be a column containing the individual predictions of an ensemble of models (stored as an array of values for each datapoint), before merging them in a single final predicted value, or it can be directly the variance value of the ensemble associated with each datapoint's predictions.
+
+In `UNIQUE`, data-based and model-based features are represented by the [`FeaturesInputType`](./unique/input_type/base.py) and [`ModelInputType`](./unique/input_type/base.py) classes, respectively. Check out [Prepare Your Pipeline](#prepare-your-pipeline) for more details about how to specify your inputs to `UNIQUE`.
+
+#### Schematic Example
 
 For example, an input dataset to `UNIQUE` could look like this:
 
@@ -114,11 +131,12 @@ For example, an input dataset to `UNIQUE` could look like this:
 |`dtype`|`Any`|`int` or `float`|`int` or `float`|`str`|`int` or `float`|`Iterable` or `np.ndarray`|`Iterable` or `np.ndarray`|`float`|
 
 > [!TIP]
-> When storing long arrays/lists in a single `pd.DataFrame` column, saving and reloading the dataframe as a `csv` file will cause issues, due to the fact that each array will be saved as a string when saving in the `csv` format and will be truncated with ellipsis if exceeding a certain limit (typically > 1000 elements per array), thus making it impossible to correctly parse the entire original array when loading the `csv` file again. To overcome this, consider dumping the input dataframe as a `json` or `pickle` file - e.g., with [`pd.DataFrame.to_json`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_json.html) or [`pd.DataFrame.to_pickle`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_pickle.html), which will not cause any of the aforementioned issues. `UNIQUE` supports input dataframe in `csv`, `json` and `pickle` formats.
+> When storing long arrays/lists in a single `pd.DataFrame` column, saving and reloading the dataframe as a `csv` file will cause issues, due to the fact that each array will be saved as a string when saving in the `csv` format and will be truncated with ellipsis if exceeding a certain limit (typically > 1000 elements per array), thus making it impossible to correctly parse the entire original array when loading the `csv` file again.
+>
+> To overcome this, consider dumping the input dataframe as a `json` or `pickle` file - e.g., with [`pd.DataFrame.to_json`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_json.html) or [`pd.DataFrame.to_pickle`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_pickle.html), which will not cause any of the aforementioned issues. `UNIQUE` supports input dataframe in `csv`, `json` and `pickle` formats.
 
 > [!CAUTION]
 > Only unpickle files you trust. See the [`pickle` module docs](https://docs.python.org/3/library/pickle.html#module-pickle) for more information, and consider safer serialization formats such as `json`.
-
 
 Check [Examples](#examples) for some practical, hands-on tutorials on data preparation for `UNIQUE`.
 
@@ -128,6 +146,31 @@ Check [Examples](#examples) for some practical, hands-on tutorials on data prepa
 Once the data has been prepared, the easiest way to run `UNIQUE` is through the [`unique.Pipeline`](./unique/pipeline.py) object. `Pipeline` allows you to run the uncertainty quantification benchmark in an end-to-end fashion.
 
 In order to tell `UNIQUE` which inputs to use and which UQ methods to evaluate, you need to prepare a configuration file. This is a `yaml` file which contains all the specifications needed to retrieve and run the `UNIQUE` pipeline.
+
+#### Available Configuration Arguments
+
+|Argument Name|Type|Description|
+|:------------|:---|:----------|
+|`data_path`|`str`|Full path to the prepared input dataset. Supported formats: [`csv`, `json`, `pkl`]. Check out [Prepare Your Data](prepare_data.md) for more details.|
+|`output_path`|`str`|Full path to the output directory where to save `UNIQUE`'s outputs (figures, tables, models, etc.). Check out [Usage](usage.md) and the [Examples](../examples/index.md) for more details.|
+|`id_column_name`|`str`|Name of the column containing the unique data IDs. Use `"index"` if there are no such identifiers or column in your dataset. Check out [Prepare Your Data](prepare_data.md) for more details.|
+|`labels_column_name`|`str`|Name of the column containing the target labels/values used to train your predictive model.|
+|`predictions_column_name`|`str`|Name of the column containing the point-wise, final predictions from your predictive model.|
+|`which_set_column_name`|`str`|Name of the column containing the specification of which subset the datapoint belongs to. Subsets must either be: [`"TRAIN"`, `"TEST"`, `"CALIBRATION"`]. Check out [Prepare Your Data](prepare_data.md) for more details.|
+|`model_name`|`str`|Name of your predictive model. Only used for logging purposes.|
+|`problem_type`|`str`|Predictive task of the model. Must be either [`"classification"`, `"regression"`].|
+|`mode`|`str`|Modality by which to sum variances and distance-based UQ methods to compute {py:class}`~unique.uq_metric_factory.combinations.sum_of_variances.SumOfVariances`. Allowed modalities: [`"compact"`, `"full"`, `"extended"`]. Check out {py:class}`~unique.utils.uncertainty_utils.AnalyticsMode` for more details.|
+|`inputs_list`|`list[UniqueInputType]` or `list[dict[str, Any]]`|List of pre-initialized {py:class}`~unique.input_type.base.UniqueInputType` (if configuring `Pipeline` directly) or a list of the `UniqueInputType` names and their corresponding arguments as dictionaries (if configuring `Pipeline` via a `yaml` file). Check out [Features Type Specification](prepare_data.md#features-types-specification) for more details on `UniqueInputType` and [Configuration Template](#configuration-template) for more details on how to populate the inputs list in the `yaml` file.|
+|`error_models_list`|`list[UniqueErrorModel]` or `list[dict[str, Any]]`|List of pre-initialized {py:class}`~unique.error_models.base.UniqueErrorModel` (if configuring `Pipeline` directly) or a list of all the `UniqueErrorModel` names and their corresponding arguments as dictionaries (if configuring `Pipeline` via a `yaml` file). Check out [Error Models](../indepth/error_models.md) and [Available UQ Methods & Objects in `UNIQUE`](../indepth/available_uq_methods.md) for more details on available error models.|
+|`individual_plots`|`bool`|Whether to plot each computed UQ method's evaluation plots. Note: the plots of the overall best UQ methods are always saved (displaying to screen depends on `display_outputs`).|
+|`summary_plots`|`bool`|Whether to plot the summary plots with all UQ methods. Note: the summary plots are always saved (displaying to screen depends on `display_outputs`).|
+|`save_plots`|`bool`|Whether to save the individual plots (if enabled via `individual_plots`).|
+|`evaluate_test_only`|`bool`|Whether to evaluate the UQ methods against the `"TEST"` set only. If "False", evaluation will be carried out for the `"TRAIN"` and `"CALIBRATION"` subsets as well. Check out [Input Data Preparation](prepare_data.md#input-data-preparation) for more details.|
+|`display_outputs`|`bool`|Whether to display the enabled plots and output tables to screen. Only works if running `UNIQUE` in a JupyterNotebook cell.|
+|`n_bootstrap`|`int`|Number of bootstrapping samples to use. Default is 500 (even if `n_bootstrap` is not specified explicitly). Note: bootstrapping for selecting the overall best UQ methods is always run (unless the `Pipeline._bootstrap` is set to `False`).|
+|`verbose`|`bool`|Whether to enable "DEBUG"-level logging verbosity. "INFO"-level messages are always printed to `stdout`.|
+
+#### Configuration Template
 
 You can find below a commented example of a typical `yaml` configuration file for your `Pipeline`:
 
@@ -155,6 +198,8 @@ which_set_column_name: "Subset"
 model_name: "MyModel"
 # Specify which task your model solves: either "regression" or "classification"
 problem_type: "regression"
+# Modality by which to sum variances and distance-based UQ methods. Check `unique.utils.uncertainty_utils.AnalyticsMode` for more details.
+mode: "compact"
 
 #############
 # UQ Inputs #
@@ -218,12 +263,24 @@ n_bootstrap: 500
 verbose: false
 ```
 
+> [!TIP]
+> Copy and save the above template as a `yaml` file to use in your project.
+
 > [!NOTE]
-> Currently supported UQ methods ("metrics" argument) for `FeaturesInputType` inputs: [`manhattan_distance`](./unique/uncertainty/data_based/distance_to_training.py), [`euclidean_distance`](./unique/uncertainty/data_based/distance_to_training.py), [`tanimoto_distance`](./unique/uncertainty/data_based/distance_to_training.py) (for integer-only inputs), [`gaussian_euclidean_kde`](./unique/uncertainty/data_based/kernel_density.py), [`gaussian_manhattan_kde`](./unique/uncertainty/data_based/kernel_density.py), [`exponential_manhattan_kde`](./unique/uncertainty/data_based/kernel_density.py).
+> Currently supported UQ methods ("metrics" argument) for `FeaturesInputType` inputs:
+> * [`manhattan_distance`](./unique/uncertainty/data_based/distance_to_training.py)
+> * [`euclidean_distance`](./unique/uncertainty/data_based/distance_to_training.py)
+> * [`tanimoto_distance`](./unique/uncertainty/data_based/distance_to_training.py) (for integer-only inputs)
+> * [`gaussian_euclidean_kde`](./unique/uncertainty/data_based/kernel_density.py)
+> * [`gaussian_manhattan_kde`](./unique/uncertainty/data_based/kernel_density.py)
+> * [`exponential_manhattan_kde`](./unique/uncertainty/data_based/kernel_density.py)
 >
-> Currently supported UQ methods ("metrics" argument) for `ModelInputType` inputs: [`ensemble_variance`](./unique/uncertainty/model_based/ensemble_variance.py) (for regression tasks only), [`probability`](./unique/uncertainty/model_based/probability.py) (for classification tasks only).
->
-> See [List of Available UQ Methods & Objects in `UNIQUE`](#list-of-available-uq-methods--objects-in-unique) for more details.
+> Currently supported UQ methods ("metrics" argument) for `ModelInputType` inputs:
+> * [`ensemble_variance`](./unique/uncertainty/model_based/ensemble_variance.py) (for regression tasks only)
+> * [`probability`](./unique/uncertainty/model_based/probability.py) (for classification tasks only).
+
+> [!TIP]
+> See [Available UQ Methods & Objects in `UNIQUE`](#available-uq-methods--objects-in-unique) for more details.
 
 For more examples of `yaml` configuration files, you can check the [`notebooks`](./notebooks/) folder which contains some examples.
 
@@ -256,98 +313,9 @@ Additionally, `UNIQUE` also generates graphical outputs in the form of tables an
 For more hands-on examples and detailed usage, check out some of the examples in [`notebooks`](./notebooks).
 
 
-## Overview of `UNIQUE`
+## Deep Dive
 
-`UNIQUE` implements various input types, UQ methods, and evaluation metrics, and allows for an end-to-end uncertainty quantification benchmarking.
-
-Each input type object is associated with a certain real-world input from the user's data; each UQ method directly consists of or can be derived from the input type values; each UQ method is associated with one or multiple evaluation benchmarks and corresponding metrics.
-
-
-![UNIQUE Low Level Schema.png](./.github/schema_low_level.png)
-
-
-The above schema shows a detailed map of `UNIQUE`'s workflow and objects. From a user's input dataset, `UNIQUE` abstracts two different [input type objects](./unique/input_type): _data_- (or _features_-)and _model_-based input types, that represent the input values necessary to estimate and quantify the uncertainty in model's predictions.
-
-Each input type object can be used either directly as a representation of model's uncertainty or to compute a UQ proxy using associated UQ methods: these methods can either directly derive the UQ estimates from the input data (_base_ UQ methods), or combine several _base_ UQ methods to generate more complex and holistic measures of uncertainty (_transformed_ UQ methods).
-
-
-> [!NOTE]
-> We distinguish between "_base_" UQ methods and "_transformed_" UQ methods. _Base_ UQ methods are methods directly computable from the input data (e.g., `Variance`); instead, _transformed_ UQ methods are a combination of base UQ methods (e.g., `SumOfVariances`) or, more generally, any UQ method derived from transformation/further processing of other UQ methods (e.g., error models use base UQ methods as input training data, and their outputs/predictions are UQ methods themselves - the predicted errors are themselves a model's uncertainty quantification method).
-
-
-Error models are a novel way to measure uncertainty, and are an example of _transformed_ UQ method, as they combine several input features and _base_ UQ methods to try predicting the error of the model's predictions, as a UQ proxy itself.
-
-Lastly, each UQ method can be evaluated by three different evaluation benchmarks: ranking-based, calibration-based, and proper scoring rules evaluation. Each of these encompasses multiple evaluation metrics, which are established scores, concepts, and functions that are tasked with assessing the quality of the UQ methods with respect to the original data and model.
-
-
-### Best UQ Method Selection
-
-`UNIQUE` also provides a way to easily identify the best-performing UQ method - i.e., the one whose values most accurately reflect the true errors from the original ML model, depending on the evaluation benchmark being used.
-
-In particular, for `UNIQUE` the best UQ method is the one that best optimizes the following evaluation metrics in each benchmark:
-
-- **Ranking-based Evaluation**: highest Spearman Rank Correlation Coefficient (SRCC).
-
-- **Proper Scoring Rules**: lowest Negative Log-Likelihood (NLL).
-
-- **Calibration-based Evaluation**: lowest Mean Absolute Calibration Error (MACE).
-
-Check out [List of Evaluation Metrics](#list-of-evaluation-metrics) for more details about each evaluation score.
-
-Furthermore, if enabled (true by default), `UNIQUE` performs bootstrapping to ensure the selection is as robust as possible. That is, for each UQ method and each evaluation metrics benchmark, the evaluation score to be optimized is computed on 500 (default value) bootstrap samples of the original dataset and corresponding UQ values. This leads to a distribution of evaluation scores for each UQ method, which is then compared pairwise with the corresponding score distributions from each and every other UQ meethod via a Wilcoxon ranked sum test, to verify whether there are statistically significant differences.
-
-The best UQ method is then the one that achieves the highest number of occurrences in which its evaluation scores distribution is significantly higher/lower (depending on the evaluation method) than the score distribution of another UQ method.
-
-The best UQ method is highlighted in green in the summary tables output by `UNIQUE` and, if enabled, additional individual evaluation plots are generated for the best UQ method.
-
-
-### List of Available UQ Methods & Objects in `UNIQUE`
-
-Below, you can find an overview of the input types, UQ methods, error models, and evaluation metrics implemented in `UNIQUE`.
-
-
-|Type|Name|Short Description|Reference(s)|
-|---:|---:|:----------------|:-----------|
-|Input Type|[`FeaturesInputType`](./unique/input_type/base.py)|Data-based inputs - i.e., features that can be directly computed from/linked to the data. Features can be provided as a single value or as an array of values/features for each datapoint. Numerical features can contain integer-only (binary included) or real-valued (floats) values. See [Prepare Your Dataset](#prepare-your-dataset).||
-|Input Type|[`ModelInputType`](./unique/input_type/base.py)|Model-based inputs - i.e., outputs associated with the original predictive model. Depending on the task (`problem_type`, either "classification" or "regression"), two types of model-based inputs can be provided: for classification tasks, the predicted main class probabilities (as a single value per datapoint); for regression tasks, either the individual ensemble member's predictions (as an array) or the pre-computed ensemble variance (as a single value) for each datapoint. See [Prepare Your Dataset](#prepare-your-dataset).||
-|UQ Method|[`EnsembleVariance`](./unique/uncertainty/model_based/ensemble_variance.py)|Computes the variance of the ensemble's predictions. Either the individual ensemble member's predictions (as an array) or the pre-computed variance (as a single value) for each datapoint can be provided.||
-|UQ Method|[`Probability`](./unique/uncertainty/model_based/probability.py)|Returns the predicted primary class probability. Expects the predicted main class probability value as input, not the ensemble's (class) predictions.||
-|UQ Method|[`ManhattanDistance`](./unique/uncertainty/data_based/distance_to_training.py)|Returns the k-nearest neighbors from the training set in the corresponding feature(s) space using the Manhattan distance metric.||
-|UQ Method|[`EuclideanDistance`](./unique/uncertainty/data_based/distance_to_training.py)|Returns the k-nearest neighbors from the training set in the corresponding feature(s) space using the Euclidean distance metric.||
-|UQ Method|[`TanimotoDistance`](./unique/uncertainty/data_based/distance_to_training.py)|Returns the k-nearest neighbors from the training set in the corresponding feature(s) space using the Tanimoto distance metric.||
-|UQ Method|[`GaussianEuclideanKDE`](./unique/uncertainty/data_based/kernel_density.py)|Returns the kernel density estimation from the training set in the corresponding feature(s) space using the gaussian kernel and Euclidean distance metric.||
-|UQ Method|[`GaussianManhattanKDE`](./unique/uncertainty/data_based/kernel_density.py)|Returns the kernel density estimation from the training set in the corresponding feature(s) space using the gaussian kernel and Manhattan distance metric.||
-|UQ Method|[`ExponentialManhattanKDE`](./unique/uncertainty/data_based/kernel_density.py)|Returns the kernel density estimation from the training set in the corresponding feature(s) space using the exponential kernel and Manhattan distance metric.||
-|"Transformed" UQ Method|[`SumOfVariances`](./unique/uq_metric_factory/combinations/sum_of_variances.py)|Computes the sum of (computed) variances and distances converted to variances using the [Calibrated Negative Log-Likelihood](./unique/utils/uncertainty_utils.py) method.|[Hirschfeld _et al._ (2020) - Eq. 11 & 12](https://pubs.acs.org/doi/pdf/10.1021/acs.jcim.0c00502)|
-|"Transformed" UQ Method|[`DiffkNN`](./unique/uq_metric_factory/combinations/diffknn.py)|Computes the absolute mean difference in predicted vs. target value for the k-nearest neighbors from the training set in the corresponding feature(s) space.|[Sheridan _et al._ (2022)](https://pubs.acs.org/doi/10.1021/acs.jcim.2c00699)|
-|Error Model/"Transformed" UQ Method|[`UniqueRandomForestRegressor`](./unique/error_models/models/random_forest_regressor.py)|Builds and trains a Random Forest regressor that predicts the pointwise prediction error.|Adapted from [Lahlou _et al._ (2023)](https://arxiv.org/abs/2102.08501)|
-|Error Model/"Transformed" UQ Method|[`UniqueLASSO`](./unique/error_models/models/LASSO.py)|Builds and trains a LASSO regressor that predicts the pointwise prediction error.|Adapted from [Lahlou _et al._ (2023)](https://arxiv.org/abs/2102.08501)|
-|Evaluation Benchmark|[`RankingBasedEvaluation`](./unique/evaluation/base.py)|Computes evaluation metrics that rank predictions based on their actual prediction error vs. the computed UQ values. Generally speaking, the higher the (positive) correlation between prediction error and computed UQ values, the better/more confident the model that produced the predictions can be considered. Currently implemented metrics are: AUC Difference, Spearman Rank Correlation Coefficient, Increasing/Decreasing Coefficient, and Performance Drop. For more information about the methods, see [List of Evaluation Metrics](#list-of-evaluation-metrics).|Inspired by [Scalia _et al._ (2020)](https://doi.org/10.1021/acs.jcim.9b00975), [Hirschfeld _et al._ (2020)](https://pubs.acs.org/doi/pdf/10.1021/acs.jcim.0c00502)|
-|Evaluation Benchmark|[`ProperScoringRules`](./unique/evaluation/base.py)|Computes proper scoring rules to evaluate the quality of predictions. Proper scoring rules are functions that assign a scalar summary measure to the performance of distributional predictions, where the maximum score obtainable is reached when the predicted distribution exactly matches the target one (also known as _minimum contrast estimation_). Currently implemented metrics are: Negative Log-Likelihood, Interval Score, Check Score, Continuous Ranked Probability Score, and Brier Score. For more information about the metrics, see [List of Evaluation Metrics](#list-of-evaluation-metrics).|[Gneiting _et al._ (2007)](https://doi.org/10.1198/016214506000001437)|
-|Evaluation Benchmark|[`CalibrationBasedEvaluation`](./unique/evaluation/base.py)|Computes model's calibration - i.e., whether the model's predictions are consistent with the underlying target distribution. Currently implemented metrics are: Mean Absolute Calibration Error, and Root Mean Squared Calibration Error. For more information about the metrics, see [List of Evaluation Metrics](#list-of-evaluation-metrics).|[Kuleshov _et al._ (2018)](https://doi.org/10.48550/arXiv.1807.00263)|
-
-<!-- |Error Model/"Transformed" UQ Method|[`UniqueMLPRegressor`](./unique/error_models/models/MLP.py)|Builds and trains a MLP regressor that predicts the pointwise prediction error.|Adapted from [Lahlou _et al._ (2023)](https://arxiv.org/abs/2102.08501)|
-|Error Model/"Transformed" UQ Method|[`UniqueMLPVanillaRegressor`](./unique/error_models/models/MLP.py)|Builds and trains a simple MLP regressor that predicts the pointwise prediction error.|Adapted from [Lahlou _et al._ (2023)](https://arxiv.org/abs/2102.08501)| -->
-
-
-### List of Evaluation Metrics
-
-Below you can find a more in-depth guide to the evaluation scoring metrics implemented in UNIQUE. The source code implementation for these metrics can be found in [`evaluation_metrics.py`](./unique/evaluation/evaluation_metrics.py).
-
-
-|Evaluation Type|Metric Name|Short Description|Reference(s)|
-|--------------:|----------:|:----------------|:-----------|
-|Ranking-based|AUC Difference|The AUC measures the ranking capabilities of a model. The difference between the AUC computed using predictions ranked by the original model’s performance metric (e.g., true prediction error) and by the computed UQ method measures the ranking goodness of the UQ method. Lower values are better.|[Yousef _et al._ (2005)](https://doi.org/10.1109/AIPR.2004.18)|
-|Ranking-based|Spearman Rank Correlation Coefficient (SRCC)|The SRCC indicates how well the computed UQ method is able to rank the predictions with respect to the original model’s performance metric (e.g., true prediction error). Higher values are better.|[Marino _et al._ (2008)](https://doi.org/10.1016/j.jtbi.2008.04.011)|
-|Ranking-based|Increasing/Decreasing Coefficient|A coefficient that measures how “correct” the UQ-based ranking is with respect to the performance metric-based one when binning the ranked predictions (either in increasing or decreasing order) – i.e., the predictions are ranked and binned according to the computed UQ values; the coefficient is then the number of consecutive bins with decreasing performance metric values divided by the number of bins. Higher values are better.||
-|Ranking-based|Performance Drop|The drop in performance metric’s value between either the highest and lowest UQ-binned predictions or between the original model’s performance metric on all the predictions and the lowest UQ-binned predictions – i.e., the predictions are ranked and binned according to the computed UQ method; the performance metric is computed for the bins associated with the highest and lowest UQ, and for all the predictions being considered; the score corresponds to the difference in computed performance metrics for highest and lowest UQ-based bins, and for all data and lowest UQ-based bin. Higher values are better.||
-|Proper Scoring Rules|Negative Log-Likelihood (NLL)|The NLL assesses how well the predicted probability distribution – i.e., predictions and corresponding computed UQ values, fits the observed data or the error distribution. Lower values are better.|[Maddox _et al._ (2019)](https://doi.org/10.48550/arXiv.1902.02476), [Lakshminarayanan _et al._ (2016)](https://doi.org/10.48550/arXiv.1612.01474), [Detlefsen _et al._ (2019)](https://doi.org/10.48550/arXiv.1906.03260), [Pearce _et al._ (2018)](https://doi.org/10.48550/arXiv.1810.05546)|
-|Proper Scoring Rules|Interval Score|The interval score evaluates the sharpness and calibration of a specific prediction interval, rewarding narrow and accurate prediction intervals whilst penalizing wider prediction intervals that do not cover the observation. Lower values are better.|[Gneiting _et al._ (2007)](https://doi.org/10.1198/016214506000001437)|
-|Proper Scoring Rules|Check Score (or Pinball Loss)|The check score measures the distance between the computed UQ values (and associated predictions), intended as prediction quantiles, and the true target values. Lower values are better.|[Koenker _et al._ (1978)](https://doi.org/10.2307/1913643), [Chung _et al._ (2020)](https://doi.org/10.48550/arXiv.2011.09588)|
-|Proper Scoring Rules|Continuous Ranked Probability Score (CRPS)|The CRPS quantifies the difference between the predicted probability distribution – i.e., predictions and computed UQ values, and the observed distribution. Lower values are better.|[Matheson _et al._ (1976)](https://doi.org/10.1287/mnsc.22.10.1087)|
-|Proper Scoring Rules|Brier Score|The Brier Score estimates the accuracy of probabilistic predictions, computed as the mean squared difference between predicted probabilities and the actual outcomes. Lower values are better.|[Brier _et al._ (1950)](https://doi.org/10.1175/1520-0493(1950)078%3C0001:VOFEIT%3E2.0.CO;2)|
-|Calibration-based|Mean Absolute Calibration Error (MACE)|The MACE assesses the calibration of the predicted probabilities or intervals, by comparing the bin-wise absolute calibration errors between predicted and observed distributions. Lower values are better.||
-|Calibration-based|Root Mean Squared Calibration Error (RMSCE)|The RMSCE assesses the calibration of the predicted probabilities or intervals, by comparing the bin-wise root mean squared calibration errors between predicted and observed distributions. Lower values are better.||
+Check out the docs [INSERT LINKS TO DOCS] for an in-depth overview of `UNIQUE`'s concepts, functionalities, outputs, and references.
 
 
 ## Contributing
@@ -359,7 +327,7 @@ Please note that we have a [Code of Conduct](./CODE_OF_CONDUCT.md) in place to e
 
 ## License
 
-UNIQUE is licensed under the BSD 3-Clause License. See the [LICENSE](./LICENSE) file.
+`UNIQUE` is licensed under the BSD 3-Clause License. See the [LICENSE](./LICENSE) file.
 
 
 ## Contacts & Acknowledgements
@@ -367,10 +335,10 @@ UNIQUE is licensed under the BSD 3-Clause License. See the [LICENSE](./LICENSE) 
 For any questions or further details about the project, please get in touch with any of the following contacts:
 
 * **[Jessica Lanini](mailto:jessica.lanini@novartis.com?subject=UNIQUE)**
-* **[Minh Tam Davide Huynh]**
+* **[Minh Tam Davide Huynh](https://github.com/mtdhuynh)**
 * **[Gaetano Scebba](mailto:gaetano.scebba@novartis.com?subject=UNIQUE)**
 * **[Nadine Schneider](mailto:nadine-1.schneider@novartis.com?subject=UNIQUE)**
 * **[Raquel Rodríguez-Pérez](mailto:raquel.rodriguez_perez@novartis.com?subject=UNIQUE)**
 
 
-![Novartis Logo](./.github/novartis_logo.png)
+![Novartis Logo](./docs/source/_static/novartis_logo.png)
