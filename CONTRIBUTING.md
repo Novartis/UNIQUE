@@ -1,6 +1,6 @@
-# Contributing to UNIQUE
+# Contributing to `UNIQUE`
 
-Thank you for considering contributing to UNIQUE! 🎉
+Thank you for considering contributing to `UNIQUE`! 🎉
 
 
 ## How Can You Contribute?
@@ -49,4 +49,4 @@ Please note that we have a [Code of Conduct](./CODE_OF_CONDUCT.md) in place to e
 
 ## Thank You! 🙌
 
-We appreciate your contributions to UNIQUE! Your help makes this project better for everyone. Let's build something amazing together! 🚀
+We appreciate your contributions to `UNIQUE`! Your help makes this project better for everyone. Let's build something amazing together! 🚀
