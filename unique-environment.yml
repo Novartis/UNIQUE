@@ -15,6 +15,7 @@ dependencies:
   - matplotlib >=3.6,<=3.8.2
   - numpy >=1.19,<=1.26.4
   - pandas >=2.0,<=2.2.0
+  - pip >= 24
   - pip:
     - genbadge >=1.1.1
     - linkify-it-py ==2.0.3
@@ -30,7 +31,7 @@ dependencies:
   - python >=3.8,<=3.12.1
   - pyyaml >=6.0,<=6.0.1
   - rdkit ==2023.09.1
-  - ruamel.yaml >=0.18
+  - ruamel.yaml >=0.17
   - scikit-learn >=1.3,<=1.4.0
   - scipy >=1.10,<=1.12.0
   - seaborn >=0.13,<=0.13.2
