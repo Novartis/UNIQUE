@@ -17,6 +17,14 @@ dependencies:
   - pandas >=2.0,<=2.2.0
   - pip:
     - genbadge >=1.1.1
+    - linkify-it-py ==2.0.3
+    - myst-nb >= 1.1.0
+    - myst-parser >=3,<=4
+    - sphinx >=7.3.7
+    - sphinx-autoapi >=3.1.1
+    - sphinx-autodoc2 >=0.5.0
+    - sphinx-book-theme >=1.1.2
+    - sphinx-copybutton ==0.5.2
   - pre-commit >=3.6.2, <=3.7
   - pyarrow <=16.1.0
   - python >=3.8,<=3.12.1
