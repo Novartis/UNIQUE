@@ -1,3 +1,15 @@
+# Project-specific
+.cache
+.R*
+*.stdf
+.DS*
+._.DS*
+notebooks/**/*.csv
+notebooks/**/*.pkl
+notebooks/**/*.json
+notebooks/**/output/*
+notebooks/**/*unique_error_model*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -69,7 +81,9 @@ instance/
 .scrapy
 
 # Sphinx documentation
-docs/_build/
+docs/**/build/
+docs/**/.jupyter_cache
+docs/**/examples/notebooks
 
 # PyBuilder
 .pybuilder/
@@ -129,6 +143,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.conda/
 
 # Spyder project settings
 .spyderproject

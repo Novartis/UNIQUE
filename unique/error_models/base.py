@@ -178,7 +178,6 @@ class UniqueErrorModel:
                 init_model, self.x_train[inputs_name], self.y_train[inputs_name]
             )
 
-
             # Predict on the whole input dataset using the trained model
             error_predictions, error_targets = self._predict(
                 trained_model, self.x_all[inputs_name], self.y_all[inputs_name]

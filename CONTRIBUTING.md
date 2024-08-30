@@ -1,6 +1,6 @@
-# Contributing to UNIQUE
+# Contributing to `UNIQUE`
 
-Thank you for considering contributing to UNIQUE! 🎉
+Thank you for considering contributing to `UNIQUE`! 🎉
 
 
 ## How Can You Contribute?
@@ -44,9 +44,9 @@ The maintainers and/or other power-users will discuss the PR and eventually merg
 
 ## Code of Conduct 🤝
 
-Please note that we have a [Code of Conduct](./CODE_OF_CONDUCT.md) in place to ensure a positive and inclusive community environment. By participating in this project, you agree to abide by its terms.
+Please note that we have a Code of Conduct in place to ensure a positive and inclusive community environment. By participating in this project, you agree to abide by its terms.
 
 
 ## Thank You! 🙌
 
-We appreciate your contributions to UNIQUE! Your help makes this project better for everyone. Let's build something amazing together! 🚀
+We appreciate your contributions to `UNIQUE`! Your help makes this project better for everyone. Let's build something amazing together! 🚀
