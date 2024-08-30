@@ -21,10 +21,10 @@ version_badge_url = f"https://img.shields.io/badge/Version-v{version}-green"
 
 extensions = [
     # "autoapi.extension",
-    "autodoc2",  # Instead of 'sphinx.ext.autodoc',
+    # "autodoc2",  # Instead of 'sphinx.ext.autodoc',
     "myst_nb",
-    # "myst_parser", # Unneeded if using "myst_nb"
     "sphinx_copybutton",
+    # "sphinx.ext.autodoc",
     # "sphinx.ext.autosummary",
     "sphinx.ext.napoleon",
     "sphinx.ext.viewcode",
@@ -73,10 +73,10 @@ nb_execution_cache_path = "docs/.jupyter_cache"
 nb_merge_streams = True
 
 # -- Sphinx AutoAPI ----------------------------------------------------------
-autoapi_dirs = ["../../unique"]
-autoapi_add_toctree_entry = False
-autoapi_generate_api_docs = False
-autoapi_add_objects_to_toctree = False
+# autoapi_dirs = ["../../unique"]
+# autoapi_add_toctree_entry = False
+# autoapi_generate_api_docs = False
+# autoapi_add_objects_to_toctree = False
 
 # -- Sphinx AutoDoc2 Config --------------------------------------------------
 # autodoc2_module_all_regexes = [
@@ -88,29 +88,29 @@ autoapi_add_objects_to_toctree = False
 # 	"unique.utils",
 # 	"unique",
 # ]
-autodoc2_packages = [
-    {
-        "path": "../../unique",
-        "auto_mode": True,
-    },
-]
-autodoc2_hidden_objects = ["dunder", "private", "inherited"]
-autodoc2_index_template = """API Reference
-=============
+# autodoc2_packages = [
+#     {
+#         "path": "../../unique",
+#         "auto_mode": True,
+#     },
+# ]
+# autodoc2_hidden_objects = ["dunder", "private", "inherited"]
+# autodoc2_index_template = """API Reference
+# =============
 
-These sections contain auto-generated API reference documentation.
+# These sections contain auto-generated API reference documentation.
 
-.. toctree::
-   :titlesonly:
-{% for package in top_level %}
-   {{ package }}
-{%- endfor %}
+# .. toctree::
+#    :titlesonly:
+# {% for package in top_level %}
+#    {{ package }}
+# {%- endfor %}
 
-"""
+# """
 
-autodoc2_render_plugin = (
-    "myst"  # Comment to allow for correct parsing of Google-style docstring
-)
+# autodoc2_render_plugin = (
+#     "md"  # Comment to allow for correct parsing of Google-style docstring
+# )
 
 # autodoc_typehints = "both"
 # autodoc_typehints_description_target = "documented_params"
