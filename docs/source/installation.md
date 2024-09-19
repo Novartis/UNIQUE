@@ -41,11 +41,7 @@ git clone https://github.com/Novartis/UNIQUE.git ./unique
 cd unique
 ```
 
-The project uses [`mamba`](https://mamba.readthedocs.io/en/latest/index.html) for dependencies management, which is a faster drop-in replacement for [`conda`](https://conda.io/projects/conda/en/latest/user-guide/install/index.html).
-
-:::{tip}
-If you still wish to use `conda`, you can change the backend solver by adding `--solver=libmamba` to your `conda install` standard command ([check out the docs](https://conda.github.io/conda-libmamba-solver/user-guide/#try-it-once)).
-:::
+The project uses [`conda`](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) and/or [`mamba`](https://mamba.readthedocs.io/en/latest/index.html) for dependencies management.
 
 To set the project up, run:
 
