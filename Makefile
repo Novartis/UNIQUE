@@ -29,7 +29,7 @@ print-info:
 
 # Install environment
 env:
-	mamba env create -f unique-environment.yml -p ${CONDA_ENV}
+	conda env create -f unique-environment.yml -p ${CONDA_ENV}
 	conda config --append envs_dirs ${CONDA_ENV}
 
 jupyter-kernel:
@@ -37,8 +37,8 @@ jupyter-kernel:
 
 # Delete environment
 clean-env:
-	mamba env remove -p ${CONDA_ENV}
-	mamba clean --all --yes
+	conda env remove -p ${CONDA_ENV}
+	conda clean --all --yes
 	rm -rf ${CONDA_ENV}
 
 # Setup pre-commit
