@@ -158,7 +158,7 @@ Currently supported error types (`error_type_list` argument) for {py:class}`~uni
 where {math}`y = label` and {math}`\hat{y} = prediction`.
 :::
 
-:::{deprecated} 0.2.1
+:::{deprecated} 0.1.0
 For {py:class}`~unique.input_type.base.ModelInputType` inputs, it is not necessary to specify the `metrics` argument to compute anymore.
 
 `UNIQUE` automatically detects whether to treat the model-based inputs as regression-based predictions/ensemble variance or classification-based probabilities depending on the specified `problem_type`.

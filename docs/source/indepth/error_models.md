@@ -27,9 +27,9 @@ where {math}`y = label` and {math}`\hat{y} = prediction`.
 {{error_model_schema}}
 
 Given the original input features, along with computed UQ values, `UNIQUE` generates three different sets of input features to train the error predictors:
-1. original model’s prediction, UQ methods, and original input features provided by the user;
-2. original model’s prediction and UQ methods only;
-3. original model’s prediction and non-_transformed_ UQ methods only.
+1. Original model’s prediction, UQ methods, and original input features provided by the user;
+2. Original model’s prediction and UQ methods only;
+3. Original model’s prediction and non-_transformed_ UQ methods only.
 
 The samples are taken from the `"TRAIN"` and `"CALIBRATION"` subsets only; the `"TEST"` subset is left aside to ensure proper validation.
 

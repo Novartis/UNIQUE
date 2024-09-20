@@ -6,6 +6,7 @@
 ![Python](https://img.shields.io/badge/Python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12.1-blue)
 ![version](https://img.shields.io/badge/Version-v0.1.1-green)
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-red.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![chemRxiv](https://img.shields.io/badge/chemRxiv-10.26434%2Fchemrxiv--2024--fmbgk-yellow)](https://doi.org/10.26434/chemrxiv-2024-fmbgk)
 
 
 ## Introduction
@@ -81,6 +82,20 @@ Please note that we have a [Code of Conduct](./CODE_OF_CONDUCT.md) in place to e
 ## License
 
 `UNIQUE` is licensed under the BSD 3-Clause License. See the [LICENSE](./LICENSE.md) file.
+
+
+## Cite Us
+
+If you find `UNIQUE` helpful for your work and/or research, please consider citing our work:
+
+```bibtex
+@misc{lanini2024unique,
+  title={UNIQUE: A Framework for Uncertainty Quantification Benchmarking},
+  author={Lanini, Jessica and Huynh, Minh Tam Davide and Scebba, Gaetano and Schneider, Nadine and Rodr{\'\i}guez-P{\'e}rez, Raquel},
+  year={2024},
+  doi={https://doi.org/10.26434/chemrxiv-2024-fmbgk},
+}
+```
 
 
 ## Contacts & Acknowledgements

@@ -21,9 +21,14 @@ myst:
       version_badge: "![Version badge](https://img.shields.io/badge/Version-vUNIQUE-green)"
       # See: https://github.com/executablebooks/MyST-Parser/issues/279#issuecomment-752948379
       license_badge: |
-         :::{image} https://img.shields.io/badge/License-BSD_3--Clause-red.svg
+         :::{image} https://img.shields.io/badge/License-BSD_3--Clause-red
          :alt: License
          :target: https://opensource.org/licenses/BSD-3-Clause
+         :::
+      article_badge: |
+         :::{image} https://img.shields.io/badge/chemRxiv-10.26434%2Fchemrxiv--2024--fmbgk-yellow
+         :alt: Paper's DOI
+         :target: https://doi.org/10.26434/chemrxiv-2024-fmbgk
          :::
       high_level_schema: |
          :::{figure} _static/schema_high_level.png
@@ -37,9 +42,11 @@ myst:
 
 # Welcome to `UNIQUE`'s documentation!
 
-{{python_versions}} {{version_badge | replace("UNIQUE", version)}} {{license_badge}}
+{{python_versions}} {{version_badge | replace("UNIQUE", version)}} {{license_badge}} {{article_badge}}
 
 {{logo_light}} {{logo_dark}}
+
+## Introduction
 
 `UNIQUE` provides methods for quantifying and evaluating the uncertainty of Machine Learning (ML) models predictions. The library allows to:
 * combine and benchmark multiple uncertainty quantification (UQ) methods simultaneously;
@@ -50,6 +57,22 @@ myst:
 `UNIQUE` is a model-agnostic tool, meaning that it does not depend on any specific ML model building platform nor provides any ML model training functionality. It only requires the user to input their model's inputs and predictions.
 
 {{high_level_schema}}
+
+## Cite Us
+
+If you find `UNIQUE` helpful for your work and/or research, please consider citing our work:
+
+```bibtex
+@misc{lanini2024unique,
+  title={UNIQUE: A Framework for Uncertainty Quantification Benchmarking},
+  author={Lanini, Jessica and Huynh, Minh Tam Davide and Scebba, Gaetano and Schneider, Nadine and Rodr{\'\i}guez-P{\'e}rez, Raquel},
+  year={2024},
+  doi={https://doi.org/10.26434/chemrxiv-2024-fmbgk},
+}
+```
+
+To request more information, check out [Contacts & Acknowledgements](development/contacts.md#contacts--acknowledgements).
+
 
 ---
 
