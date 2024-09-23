@@ -146,7 +146,7 @@ html_theme_options = {
         "image_dark": "_static/unique_logo_dark_blue.png",
     },
     "repository_branch": "master",
-    "repository_provider": "bitbucket",
+    "repository_provider": "github",
     "repository_url": "https://github.com/Novartis/UNIQUE",
     "path_to_docs": "./docs/source",
     "show_navbar_depth": 1,
