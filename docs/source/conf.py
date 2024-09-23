@@ -136,7 +136,7 @@ html_theme_options = {
     "icon_links": [
         {
             "name": "Version",
-            "url": "https://bitbucket.prd.nibr.novartis.net/projects/UN/repos/unique",
+            "url": "https://github.com/Novartis/UNIQUE",
             "icon": version_badge_url,
             "type": "url",
         }
@@ -147,7 +147,7 @@ html_theme_options = {
     },
     "repository_branch": "master",
     "repository_provider": "bitbucket",
-    "repository_url": "https://bitbucket.prd.nibr.novartis.net/projects/UN/repos/unique",
+    "repository_url": "https://github.com/Novartis/UNIQUE",
     "path_to_docs": "./docs/source",
     "show_navbar_depth": 1,
     "toc_title": "On this page",
