@@ -57,7 +57,8 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/Novartis/UNIQUE"
+Repository = "https://github.com/Novartis/UNIQUE"
+Documentation = "https://opensource.nibr.com/UNIQUE"
 
 [project.optional-dependencies]
 dev = [

@@ -7,6 +7,7 @@
 ![version](https://img.shields.io/badge/Version-v0.1.1-green)
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-red.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![chemRxiv](https://img.shields.io/badge/chemRxiv-10.26434%2Fchemrxiv--2024--fmbgk-yellow)](https://doi.org/10.26434/chemrxiv-2024-fmbgk)
+[![Docs](https://github.com/Novartis/UNIQUE/actions/workflows/docs.yml/badge.svg?branch=main)](http://opensource.nibr.com/UNIQUE/)
 
 
 ## Introduction

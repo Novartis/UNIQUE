@@ -30,6 +30,11 @@ myst:
          :alt: Paper's DOI
          :target: https://doi.org/10.26434/chemrxiv-2024-fmbgk
          :::
+      docs_badge: |
+         :::{image} https://github.com/Novartis/UNIQUE/actions/workflows/docs.yml/badge.svg?branch=main
+         :alt: Documentation build status
+         :target: http://opensource.nibr.com/UNIQUE
+         :::
       high_level_schema: |
          :::{figure} _static/schema_high_level.png
          :alt: UNIQUE High-Level Schema
@@ -42,7 +47,7 @@ myst:
 
 # Welcome to `UNIQUE`'s documentation!
 
-{{python_versions}} {{version_badge | replace("UNIQUE", version)}} {{license_badge}} {{article_badge}}
+{{python_versions}} {{version_badge | replace("UNIQUE", version)}} {{license_badge}} {{article_badge}} {{docs_badge}}
 
 {{logo_light}} {{logo_dark}}
 
