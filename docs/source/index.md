@@ -33,7 +33,7 @@ myst:
       docs_badge: |
          :::{image} https://github.com/Novartis/UNIQUE/actions/workflows/docs.yml/badge.svg?branch=main
          :alt: Documentation build status
-         :target: http://opensource.nibr.com/UNIQUE
+         :target: https://opensource.nibr.com/UNIQUE/
          :::
       high_level_schema: |
          :::{figure} _static/schema_high_level.png

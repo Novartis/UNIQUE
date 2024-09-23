@@ -1,0 +1,75 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: UNIQUE Build
+
+on:
+  # Runs on pushes targeting the default branches
+  push:
+    branches: ["main", "master", "docs"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "package-build"
+  cancel-in-progress: false
+
+jobs:
+  # Single deploy job since we're just deploying
+  build-package:
+    name: Build distribution 📦
+    runs-on: ubuntu-latest
+
+    # Steps to run to correctly build pypi package
+    steps:
+      # Check out repo
+      - name: Checkout repository contents
+        uses: actions/checkout@v4
+      # Install correct Python version in VM
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ">=3.8 <=3.12.1"
+      # Install flit and build binary wheel/source tarball
+      - name: Install flit
+        run: python3 -m pip install flit --user
+      - name: Build package with flit
+        run: flit build
+      # Store distribution packages
+      - name: Store distribution packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: unique-package-distribution
+          path: dist/
+
+  publish-to-testpypi:
+    name: Publish Python 🐍 distribution 📦 to TestPyPI
+    needs:
+    - build-package
+    runs-on: ubuntu-latest
+
+    environment:
+      name: testpypi
+      url: https://test.pypi.org/p/uncertainty-benchmark
+
+    permissions:
+      id-token: write  # IMPORTANT: mandatory for trusted publishing
+
+    steps:
+    - name: Download all the dists
+      uses: actions/download-artifact@v4
+      with:
+        name: unique-package-distribution
+        path: dist/
+    - name: Publish distribution 📦 to TestPyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        repository-url: https://test.pypi.org/legacy/
+        skip-existing: true
