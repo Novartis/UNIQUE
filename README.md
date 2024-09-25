@@ -3,10 +3,13 @@
   <figcaption align=center><u><b>UN</b></u>certa<u><b>I</b></u>nty <u><b>QU</b></u>antification b<u><b>E</b></u>nchmark: a Python library for benchmarking uncertainty estimation and quantification methods for Machine Learning models predictions.</figcaption>
 </figure>
 
-![Python](https://img.shields.io/badge/Python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12.1-blue)
-![version](https://img.shields.io/badge/Version-v0.1.1-green)
-[![License](https://img.shields.io/badge/License-BSD_3--Clause-red.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![Python](https://img.shields.io/pypi/pyversions/unique-uncertainty?label=Python)](https://pypi.org/project/unique-uncertainty/)
+[![version](https://img.shields.io/pypi/v/unique-uncertainty?color=green&label=PyPI)](https://pypi.org/project/unique-uncertainty/)
+[![PyPI downloads](https://img.shields.io/pypi/dm/unique-uncertainty?label=Downloads)](https://pypi.org/project/unique-uncertainty/)
+[![License](https://img.shields.io/badge/License-BSD_3--Clause-red)](https://opensource.org/licenses/BSD-3-Clause)
 [![chemRxiv](https://img.shields.io/badge/chemRxiv-10.26434%2Fchemrxiv--2024--fmbgk-yellow)](https://doi.org/10.26434/chemrxiv-2024-fmbgk)
+[![Docs](https://github.com/Novartis/UNIQUE/actions/workflows/docs.yml/badge.svg?branch=main)](https://opensource.nibr.com/UNIQUE/)
+[![Build](https://github.com/Novartis/UNIQUE/actions/workflows/build.yml/badge.svg?branch=main)](https://pypi.org/project/unique-uncertainty/)
 
 
 ## Introduction
@@ -23,20 +26,23 @@
 
 ## Installation
 
-![Python](https://img.shields.io/badge/Python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12.1-blue)
+[![Python](https://img.shields.io/pypi/pyversions/unique-uncertainty?label=Python)](https://pypi.org/project/unique-uncertainty/)
+[![version](https://img.shields.io/pypi/v/unique-uncertainty?color=green&label=PyPI)](https://pypi.org/project/unique-uncertainty/)
+[![PyPI downloads](https://img.shields.io/pypi/dm/unique-uncertainty?label=Downloads)](https://pypi.org/project/unique-uncertainty/)
+[![Build](https://github.com/Novartis/UNIQUE/actions/workflows/build.yml/badge.svg?branch=main)](https://pypi.org/project/unique-uncertainty/)
 
 `UNIQUE` is currently compatible with Python 3.8 through 3.12.1. To install the latest release and use the package as is, run the following in a compatible environment of choice:
 
 ```bash
-pip install git+https://github.com/Novartis/UNIQUE.git
+pip install unique-uncertainty
 ```
 
-Check out the docs for more installation instructions.
+Check out the [docs](https://opensource.nibr.com/UNIQUE/installation.html#installation) for more installation instructions.
 
 
 ## Getting Started
 
-Check out the docs for a complete set of instructions on how to prepare your data and the possible configurations offered by `UNIQUE`.
+Check out the [docs](https://opensource.nibr.com/UNIQUE/getting_started/index.html#getting-started) for a complete set of instructions on how to prepare your data and the possible configurations offered by `UNIQUE`.
 
 
 ## Usage
@@ -64,12 +70,12 @@ Additionally, `UNIQUE` also generates graphical outputs in the form of tables an
 
 ### Examples
 
-For more hands-on examples and detailed usage, check out some of the examples in the docs.
+For more hands-on examples and detailed usage, check out some of the examples in the [docs](https://opensource.nibr.com/UNIQUE/examples/index.html#examples).
 
 
 ## Deep Dive
 
-Check out the docs for an in-depth overview of `UNIQUE`'s concepts, functionalities, outputs, and references.
+Check out the [docs](https://opensource.nibr.com/UNIQUE/indepth/index.html#deep-dive) for an in-depth overview of `UNIQUE`'s concepts, functionalities, outputs, and references.
 
 
 ## Contributing

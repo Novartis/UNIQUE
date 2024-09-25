@@ -12,9 +12,10 @@ project = "UNIQUE"
 copyright = "2024, Novartis Pharma AG"
 author = "Novartis Pharma AG"
 # author = 'Minh Tam Davide Huynh, Gaetano Scebba, Jessica Lanini, Raquel Rodriguez-Perez'
-version = str(unique.__version__)
 
-version_badge_url = f"https://img.shields.io/badge/Version-v{version}-green"
+version_badge_url = (
+    "https://img.shields.io/pypi/v/unique-uncertainty?label=PyPI&color=green"
+)
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -50,8 +51,10 @@ myst_enable_extensions = [
 myst_heading_anchors = 3
 
 myst_substitutions = {
-    "version": version,
-    "python_versions": r"![Python versions](https://img.shields.io/badge/Python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12.1-blue)",
+    "pypi_build_badge": "[![PyPI build](https://github.com/Novartis/UNIQUE/actions/workflows/build.yml/badge.svg?branch=main)](https://pypi.org/project/unique-uncertainty)",
+    "pypi_downloads_badge": "[![PyPI downloads](https://img.shields.io/pypi/dm/unique-uncertainty?label=Downloads)](https://pypi.org/project/unique-uncertainty)",
+    "pypi_version_badge": "[![PyPI version](https://img.shields.io/pypi/v/unique-uncertainty?label=PyPI&color=green)](https://pypi.org/project/unique-uncertainty)",
+    "python_versions_badge": "![Python versions](https://img.shields.io/pypi/pyversions/unique-uncertainty?label=Python)",
 }
 
 source_suffix = {
@@ -135,8 +138,8 @@ html_last_updated_fmt = ""
 html_theme_options = {
     "icon_links": [
         {
-            "name": "Version",
-            "url": "https://github.com/Novartis/UNIQUE",
+            "name": "PyPI Version",
+            "url": "https://pypi.org/project/unique-uncertainty",
             "icon": version_badge_url,
             "type": "url",
         }
@@ -146,7 +149,7 @@ html_theme_options = {
         "image_dark": "_static/unique_logo_dark_blue.png",
     },
     "repository_branch": "master",
-    "repository_provider": "bitbucket",
+    "repository_provider": "github",
     "repository_url": "https://github.com/Novartis/UNIQUE",
     "path_to_docs": "./docs/source",
     "show_navbar_depth": 1,

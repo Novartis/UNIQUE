@@ -3,7 +3,7 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "unique"
+name = "unique-uncertainty"
 authors = [
 	{name = "Raquel Rodriguez-Perez"},
 	{name = "Jessica Lanini"},
@@ -17,7 +17,6 @@ classifiers = [
 	"Intended Audience :: Education",
 	"Intended Audience :: Science/Research",
     "License :: OSI Approved :: BSD License",
-	"Private :: Do Not Upload",
     "Programming Language :: Python",
 	"Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
@@ -33,7 +32,7 @@ classifiers = [
 	"Topic :: Software Development :: Libraries",
 	"Topic :: Software Development :: Libraries :: Python Modules",
 ]
-version = "0.1.1"
+version = "0.2.0"
 license = {file="LICENSE.md"}
 description = "UNIQUE is a Python package for uncertainty quantification and benchmarking of ML models' predictions."
 requires-python = ">=3.8,<=3.12.1"
@@ -57,7 +56,8 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/Novartis/UNIQUE"
+Repository = "https://github.com/Novartis/UNIQUE"
+Documentation = "https://opensource.nibr.com/UNIQUE"
 
 [project.optional-dependencies]
 dev = [
@@ -80,6 +80,9 @@ dev = [
 	"tox>=3.27,<=4.12.1",
     "tox-conda>=0.10,<=0.10.2",
 ]
+
+[tool.flit.module]
+name = "unique"
 
 [tool.black]
 line-length = 88

@@ -31,5 +31,3 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 from .pipeline import Pipeline
 
 __all__ = ["Pipeline"]
-
-__version__ = "0.1.1"
