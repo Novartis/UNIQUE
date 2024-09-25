@@ -10,7 +10,7 @@ myst:
 ---
 # Installation
 
-{{python_versions}}
+{{python_versions_badge}} {{pypi_build_badge}} {{pypi_downloads_badge}}
 
 `UNIQUE` is currently compatible with Python 3.8 through 3.12.1. To install the latest release and use the package as is, run the following in a compatible environment of choice:
 

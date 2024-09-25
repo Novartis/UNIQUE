@@ -51,7 +51,9 @@ myst_enable_extensions = [
 myst_heading_anchors = 3
 
 myst_substitutions = {
-    "python_versions": "![Python versions](https://img.shields.io/pypi/pyversions/unique-uncertainty?label=Python)",
+    "pypi_build_badge": "[![PyPI build](https://github.com/Novartis/UNIQUE/actions/workflows/build.yml/badge.svg?branch=main)](https://pypi.org/project/unique-uncertainty)",
+    "pypi_downloads_badge": "[![PyPI downloads](https://img.shields.io/pypi/dm/unique-uncertainty?label=PyPI%20downloads)](https://pypi.org/project/unique-uncertainty)",
+    "python_versions_badge": "![Python versions](https://img.shields.io/pypi/pyversions/unique-uncertainty?label=Python)",
 }
 
 source_suffix = {

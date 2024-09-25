@@ -51,7 +51,7 @@ myst:
 
 # Welcome to `UNIQUE`'s documentation!
 
-{{python_versions}} {{version_badge}} {{license_badge}} {{article_badge}} {{docs_badge}}
+{{python_versions_badge}} {{version_badge}} {{license_badge}} {{article_badge}} {{docs_badge}} {{pypi_build_badge}} {{pypi_downloads_badge}}
 
 {{logo_light}} {{logo_dark}}
 
