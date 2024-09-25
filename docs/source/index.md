@@ -18,11 +18,6 @@ myst:
 
          {{description}}
          :::
-      version_badge: |
-         :::{image} https://img.shields.io/pypi/v/unique-uncertainty?label=Version&color=green
-         :alt: Version badge
-         :target: https://pypi.org/project/unique-uncertainty/
-         :::
       # See: https://github.com/executablebooks/MyST-Parser/issues/279#issuecomment-752948379
       license_badge: |
          :::{image} https://img.shields.io/badge/License-BSD_3--Clause-red
@@ -51,7 +46,7 @@ myst:
 
 # Welcome to `UNIQUE`'s documentation!
 
-{{python_versions_badge}} {{version_badge}} {{license_badge}} {{article_badge}} {{docs_badge}} {{pypi_build_badge}} {{pypi_downloads_badge}}
+{{python_versions_badge}} {{pypi_version_badge}} {{license_badge}} {{article_badge}} {{docs_badge}} {{pypi_build_badge}} {{pypi_downloads_badge}}
 
 {{logo_light}} {{logo_dark}}
 

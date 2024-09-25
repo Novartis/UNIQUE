@@ -14,7 +14,7 @@ author = "Novartis Pharma AG"
 # author = 'Minh Tam Davide Huynh, Gaetano Scebba, Jessica Lanini, Raquel Rodriguez-Perez'
 
 version_badge_url = (
-    "https://img.shields.io/pypi/v/unique-uncertainty?label=Version&color=green"
+    "https://img.shields.io/pypi/v/unique-uncertainty?label=PyPI&color=green"
 )
 
 # -- General configuration ---------------------------------------------------
@@ -52,7 +52,8 @@ myst_heading_anchors = 3
 
 myst_substitutions = {
     "pypi_build_badge": "[![PyPI build](https://github.com/Novartis/UNIQUE/actions/workflows/build.yml/badge.svg?branch=main)](https://pypi.org/project/unique-uncertainty)",
-    "pypi_downloads_badge": "[![PyPI downloads](https://img.shields.io/pypi/dm/unique-uncertainty?label=PyPI%20downloads)](https://pypi.org/project/unique-uncertainty)",
+    "pypi_downloads_badge": "[![PyPI downloads](https://img.shields.io/pypi/dm/unique-uncertainty?label=Downloads)](https://pypi.org/project/unique-uncertainty)",
+    "pypi_version_badge": "[![PyPI version](https://img.shields.io/pypi/v/unique-uncertainty?label=PyPI&color=green)](https://pypi.org/project/unique-uncertainty)",
     "python_versions_badge": "![Python versions](https://img.shields.io/pypi/pyversions/unique-uncertainty?label=Python)",
 }
 
