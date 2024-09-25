@@ -46,9 +46,10 @@ jobs:
       - name: Store distribution packages
         uses: actions/upload-artifact@v4
         with:
-          name: unique-package-distribution
+          name: unique-package-distributions
           path: dist/
 
+  # TestPyPI
   publish-to-testpypi:
     name: Publish Python 🐍 distribution 📦 to TestPyPI
     needs:
@@ -57,7 +58,7 @@ jobs:
 
     environment:
       name: testpypi
-      url: https://test.pypi.org/p/uncertainty-benchmark
+      url: https://test.pypi.org/p/unique-uncertainty
 
     permissions:
       id-token: write  # IMPORTANT: mandatory for trusted publishing
@@ -66,7 +67,7 @@ jobs:
     - name: Download all the dists
       uses: actions/download-artifact@v4
       with:
-        name: unique-package-distribution
+        name: unique-package-distributions
         path: dist/
     - name: Publish distribution 📦 to TestPyPI
       uses: pypa/gh-action-pypi-publish@release/v1
