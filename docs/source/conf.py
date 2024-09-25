@@ -12,9 +12,10 @@ project = "UNIQUE"
 copyright = "2024, Novartis Pharma AG"
 author = "Novartis Pharma AG"
 # author = 'Minh Tam Davide Huynh, Gaetano Scebba, Jessica Lanini, Raquel Rodriguez-Perez'
-version = str(unique.__version__)
 
-version_badge_url = f"https://img.shields.io/badge/Version-v{version}-green"
+version_badge_url = (
+    "https://img.shields.io/pypi/v/unique-uncertainty?label=Version&color=green"
+)
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -50,8 +51,7 @@ myst_enable_extensions = [
 myst_heading_anchors = 3
 
 myst_substitutions = {
-    "version": version,
-    "python_versions": r"![Python versions](https://img.shields.io/badge/Python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12.1-blue)",
+    "python_versions": "![Python versions](https://img.shields.io/pypi/pyversions/unique-uncertainty?label=Python)",
 }
 
 source_suffix = {
@@ -135,8 +135,8 @@ html_last_updated_fmt = ""
 html_theme_options = {
     "icon_links": [
         {
-            "name": "Version",
-            "url": "https://github.com/Novartis/UNIQUE",
+            "name": "PyPI Version",
+            "url": "https://pypi.org/project/unique-uncertainty",
             "icon": version_badge_url,
             "type": "url",
         }

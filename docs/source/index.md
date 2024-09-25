@@ -18,7 +18,11 @@ myst:
 
          {{description}}
          :::
-      version_badge: "![Version badge](https://img.shields.io/badge/Version-vUNIQUE-green)"
+      version_badge: |
+         :::{image} https://img.shields.io/pypi/v/unique-uncertainty?label=Version&color=green
+         :alt: Version badge
+         :target: https://pypi.org/project/unique-uncertainty/
+         :::
       # See: https://github.com/executablebooks/MyST-Parser/issues/279#issuecomment-752948379
       license_badge: |
          :::{image} https://img.shields.io/badge/License-BSD_3--Clause-red
@@ -47,7 +51,7 @@ myst:
 
 # Welcome to `UNIQUE`'s documentation!
 
-{{python_versions}} {{version_badge | replace("UNIQUE", version)}} {{license_badge}} {{article_badge}} {{docs_badge}}
+{{python_versions}} {{version_badge}} {{license_badge}} {{article_badge}} {{docs_badge}}
 
 {{logo_light}} {{logo_dark}}
 
@@ -56,7 +60,7 @@ myst:
 `UNIQUE` provides methods for quantifying and evaluating the uncertainty of Machine Learning (ML) models predictions. The library allows to:
 * combine and benchmark multiple uncertainty quantification (UQ) methods simultaneously;
 * evaluate the goodness of UQ methods against established metrics;
-* generate intuitive visualizations to qualitatively assess how well the computed UQ methods represent the actual model uncertainty;
+* generate intuiti ve visualizations to qualitatively assess how well the computed UQ methods represent the actual model uncertainty;
 * enable the users to get a comprehensive overview of their ML model's performances from an uncertainty quantification perspective.
 
 `UNIQUE` is a model-agnostic tool, meaning that it does not depend on any specific ML model building platform nor provides any ML model training functionality. It only requires the user to input their model's inputs and predictions.
