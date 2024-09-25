@@ -46,7 +46,7 @@ myst:
 
 # Welcome to `UNIQUE`'s documentation!
 
-{{python_versions_badge}} {{pypi_version_badge}} {{license_badge}} {{article_badge}} {{docs_badge}} {{pypi_build_badge}} {{pypi_downloads_badge}}
+{{python_versions_badge}} {{pypi_version_badge}} {{conda_version_badge}} {{license_badge}} {{article_badge}} {{docs_badge}} {{pypi_build_badge}} {{pypi_downloads_badge}} {{conda_downloads_badge}}
 
 {{logo_light}} {{logo_dark}}
 

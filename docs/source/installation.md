@@ -10,13 +10,27 @@ myst:
 ---
 # Installation
 
-{{python_versions_badge}} {{pypi_version_badge}} {{pypi_downloads_badge}} {{pypi_build_badge}}
+{{python_versions_badge}} {{pypi_version_badge}} {{conda_version_badge}} {{pypi_downloads_badge}} {{conda_downloads_badge}} {{pypi_build_badge}}
 
 `UNIQUE` is currently compatible with Python 3.8 through 3.12.1. To install the latest release and use the package as is, run the following in a compatible environment of choice:
+
+::::{tab-set}
+
+:::{tab-item} `pip`
 
 ```bash
 pip install unique-uncertainty
 ```
+:::
+
+:::{tab-item} `conda`
+
+```bash
+conda install -c conda-forge unique-uncertainty
+```
+:::
+
+::::
 
 :::{tip}
 To create a dedicated virtual environment for `UNIQUE` using `conda`/`mamba` with all the required and compatible dependencies, check out: [For Developers](#for-developers).
@@ -43,17 +57,24 @@ cd unique
 
 The project uses [`conda`](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) and/or [`mamba`](https://mamba.readthedocs.io/en/latest/index.html) for dependencies management.
 
-To set the project up, run:
+Install first the `conda` dependencies and the Jupyter kernel needed to run the examples:
 
 ```bash
 # Install conda environment and jupyter kernel locally
 make env && make jupyter-kernel
 conda activate .conda/unique
+```
 
+Next, enable the pre-commit hooks for automatic code formatting/linting:
+
+```bash
 # Setup precommit hooks
 make pre-commit
+```
 
-# Install UNIQUE
+Lastly, install `UNIQUE` from source:
+
+```bash
 pip install -e .
 # Use `pip install -e .[dev]` to also install optional dependencies
 ```

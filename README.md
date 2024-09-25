@@ -4,8 +4,10 @@
 </figure>
 
 [![Python](https://img.shields.io/pypi/pyversions/unique-uncertainty?label=Python)](https://pypi.org/project/unique-uncertainty/)
-[![version](https://img.shields.io/pypi/v/unique-uncertainty?color=green&label=PyPI)](https://pypi.org/project/unique-uncertainty/)
-[![PyPI downloads](https://img.shields.io/pypi/dm/unique-uncertainty?label=Downloads)](https://pypi.org/project/unique-uncertainty/)
+[![PyPI version](https://img.shields.io/pypi/v/unique-uncertainty?color=yellowgreen&label=PyPI)](https://pypi.org/project/unique-uncertainty/)
+[![Conda version](https://img.shields.io/conda/vn/conda-forge/unique-uncertainty?color=yellowgreen&label=conda-forge)](https://anaconda.org/conda-forge/unique-uncertainty)
+[![PyPI downloads](https://img.shields.io/pypi/dm/unique-uncertainty?color=brightgreen&label=PyPI%20downloads)](https://pypi.org/project/unique-uncertainty/)
+[![Conda downloads](https://img.shields.io/conda/dn/conda-forge/unique-uncertainty?color=brightgreen&label=conda%20downloads)](https://anaconda.org/conda-forge/unique-uncertainty)
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-red)](https://opensource.org/licenses/BSD-3-Clause)
 [![chemRxiv](https://img.shields.io/badge/chemRxiv-10.26434%2Fchemrxiv--2024--fmbgk-yellow)](https://doi.org/10.26434/chemrxiv-2024-fmbgk)
 [![Docs](https://github.com/Novartis/UNIQUE/actions/workflows/docs.yml/badge.svg?branch=main)](https://opensource.nibr.com/UNIQUE/)
@@ -27,14 +29,22 @@
 ## Installation
 
 [![Python](https://img.shields.io/pypi/pyversions/unique-uncertainty?label=Python)](https://pypi.org/project/unique-uncertainty/)
-[![version](https://img.shields.io/pypi/v/unique-uncertainty?color=green&label=PyPI)](https://pypi.org/project/unique-uncertainty/)
-[![PyPI downloads](https://img.shields.io/pypi/dm/unique-uncertainty?label=Downloads)](https://pypi.org/project/unique-uncertainty/)
+[![PyPI version](https://img.shields.io/pypi/v/unique-uncertainty?color=yellowgreen&label=PyPI)](https://pypi.org/project/unique-uncertainty/)
+[![Conda version](https://img.shields.io/conda/vn/conda-forge/unique-uncertainty?color=yellowgreen&label=conda-forge)](https://anaconda.org/conda-forge/unique-uncertainty)
+[![PyPI downloads](https://img.shields.io/pypi/dm/unique-uncertainty?color=brightgreen&label=PyPI%20downloads)](https://pypi.org/project/unique-uncertainty/)
+[![Conda downloads](https://img.shields.io/conda/dn/conda-forge/unique-uncertainty?color=brightgreen&label=conda%20downloads)](https://anaconda.org/conda-forge/unique-uncertainty)
 [![Build](https://github.com/Novartis/UNIQUE/actions/workflows/build.yml/badge.svg?branch=main)](https://pypi.org/project/unique-uncertainty/)
 
 `UNIQUE` is currently compatible with Python 3.8 through 3.12.1. To install the latest release and use the package as is, run the following in a compatible environment of choice:
 
 ```bash
 pip install unique-uncertainty
+```
+
+or:
+
+```bash
+conda install -c conda-forge unique-uncertainty
 ```
 
 Check out the [docs](https://opensource.nibr.com/UNIQUE/installation.html#installation) for more installation instructions.
