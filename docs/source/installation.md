@@ -15,7 +15,7 @@ myst:
 `UNIQUE` is currently compatible with Python 3.8 through 3.12.1. To install the latest release and use the package as is, run the following in a compatible environment of choice:
 
 ```bash
-pip install git+https://github.com/Novartis/UNIQUE.git
+pip install unique-uncertainty
 ```
 
 :::{tip}
