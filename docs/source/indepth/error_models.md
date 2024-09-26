@@ -3,6 +3,7 @@ myst:
    substitutions:
       error_model_schema: |
          :::{figure} ../_static/error_model_schema.png
+         :target: _images/error_model_schema.png
          :alt: UNIQUE Error Model Schema
          :align: center
          :class: dark-light

@@ -12,7 +12,7 @@ myst:
 
 {{python_versions_badge}} {{pypi_version_badge}} {{conda_version_badge}} {{pypi_downloads_badge}} {{conda_downloads_badge}} {{pypi_build_badge}}
 
-`UNIQUE` is currently compatible with Python 3.8 through 3.12.1. To install the latest release and use the package as is, run the following in a compatible environment of choice:
+`UNIQUE` is currently compatible with Python 3.8 through 3.12.1. To install the latest release, run the following in a compatible environment of choice:
 
 ::::{tab-set}
 
@@ -30,6 +30,13 @@ conda install -c conda-forge unique-uncertainty
 ```
 :::
 
+:::{tab-item} `mamba`
+
+```bash
+mamba install -c conda-forge unique-uncertainty
+```
+:::
+
 ::::
 
 :::{tip}
@@ -38,7 +45,7 @@ To create a dedicated virtual environment for `UNIQUE` using `conda`/`mamba` wit
 
 ## For Developers
 
- {{precommit}} {{codestyle}}
+ {{license_badge}} {{precommit}} {{codestyle}}
 
 :::{seealso}
 If you wish to work on the codebase itself, check first [how to best contribute to `UNIQUE`](./development/contributing.md).
@@ -79,7 +86,7 @@ pip install -e .
 # Use `pip install -e .[dev]` to also install optional dependencies
 ```
 
-In this way, you will have access to the `UNIQUE` codebase and be able to make local modifications to the source code, within the `.conda/unique` environment that contains all the required dependencies.
+In this way, you will have access to the `UNIQUE` codebase and be able to make local modifications to the source code, within the `./.conda/unique` local environment that contains all the required dependencies.
 
 Additionally, if you use Jupyter Notebooks, the `unique` kernel will be available in the "Select kernel" menu of the JupyterLab/JupyterNotebook UI.
 
