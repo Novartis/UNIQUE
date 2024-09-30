@@ -30,7 +30,6 @@ print-info:
 # Install environment
 env:
 	conda env create -f unique-environment.yml -p ${CONDA_ENV}
-	conda config --append envs_dirs ${CONDA_ENV}
 
 jupyter-kernel:
 	${PYTHON} -m ipykernel install --sys-prefix --name unique --display-name unique
