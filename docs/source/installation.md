@@ -10,13 +10,34 @@ myst:
 ---
 # Installation
 
-{{python_versions_badge}} {{pypi_version_badge}} {{pypi_downloads_badge}} {{pypi_build_badge}}
+{{python_versions_badge}} {{pypi_version_badge}} {{conda_version_badge}} {{pypi_downloads_badge}} {{conda_downloads_badge}} {{pypi_build_badge}}
 
-`UNIQUE` is currently compatible with Python 3.8 through 3.12.1. To install the latest release and use the package as is, run the following in a compatible environment of choice:
+`UNIQUE` is currently compatible with Python 3.8 through 3.12.1. To install the latest release, run the following in a compatible environment of choice:
+
+::::{tab-set}
+
+:::{tab-item} `pip`
 
 ```bash
 pip install unique-uncertainty
 ```
+:::
+
+:::{tab-item} `conda`
+
+```bash
+conda install -c conda-forge unique-uncertainty
+```
+:::
+
+:::{tab-item} `mamba`
+
+```bash
+mamba install -c conda-forge unique-uncertainty
+```
+:::
+
+::::
 
 :::{tip}
 To create a dedicated virtual environment for `UNIQUE` using `conda`/`mamba` with all the required and compatible dependencies, check out: [For Developers](#for-developers).
@@ -24,7 +45,7 @@ To create a dedicated virtual environment for `UNIQUE` using `conda`/`mamba` wit
 
 ## For Developers
 
- {{precommit}} {{codestyle}}
+ {{license_badge}} {{precommit}} {{codestyle}}
 
 :::{seealso}
 If you wish to work on the codebase itself, check first [how to best contribute to `UNIQUE`](./development/contributing.md).
@@ -43,22 +64,29 @@ cd unique
 
 The project uses [`conda`](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) and/or [`mamba`](https://mamba.readthedocs.io/en/latest/index.html) for dependencies management.
 
-To set the project up, run:
+Install first the `conda` dependencies and the Jupyter kernel needed to run the examples:
 
 ```bash
 # Install conda environment and jupyter kernel locally
 make env && make jupyter-kernel
 conda activate .conda/unique
+```
 
+Next, enable the pre-commit hooks for automatic code formatting/linting:
+
+```bash
 # Setup precommit hooks
 make pre-commit
+```
 
-# Install UNIQUE
+Lastly, install `UNIQUE` from source:
+
+```bash
 pip install -e .
 # Use `pip install -e .[dev]` to also install optional dependencies
 ```
 
-In this way, you will have access to the `UNIQUE` codebase and be able to make local modifications to the source code, within the `.conda/unique` environment that contains all the required dependencies.
+In this way, you will have access to the `UNIQUE` codebase and be able to make local modifications to the source code, within the `./.conda/unique` local environment that contains all the required dependencies.
 
 Additionally, if you use Jupyter Notebooks, the `unique` kernel will be available in the "Select kernel" menu of the JupyterLab/JupyterNotebook UI.
 

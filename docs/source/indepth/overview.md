@@ -3,6 +3,7 @@ myst:
    substitutions:
       low_level_schema: |
          ```{figure} ../_static/schema_low_level.png
+         :target: _images/schema_low_level.png
          :alt: UNIQUE Low Level Schema
          :class: dark-light
 

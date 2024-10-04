@@ -1113,7 +1113,11 @@ class Pipeline:
                     ).reset_index(drop=True)
             if (i + 1) % np.floor(len(self.all_metrics) / 3) == 0:
                 self.logger.info(
-                    f"Evaluated {i + 1} UQ methods out of {len(self.all_metrics)}..."
+                    f"Evaluated {i + 1} UQ methods out of {len(self.all_metrics)}{'...' if i+1<len(self.all_metrics) else '.'}"
+                )
+            elif (i + 1) >= len(self.all_metrics):
+                self.logger.info(
+                    f"Evaluated {i + 1} UQ methods out of {len(self.all_metrics)}."
                 )
 
         if self._bootstrap:

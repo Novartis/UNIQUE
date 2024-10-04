@@ -10,6 +10,8 @@ For any questions or further details about the project, please get in touch with
 
 ## Cite Us
 
+{{chemrxiv_badge}}
+
 If you find `UNIQUE` helpful for your work and/or research, please consider citing our work:
 
 ```bibtex
