@@ -44,9 +44,7 @@ def compute_error(
 ) -> np.ndarray:
     """Compute the specified error type given the predictions and the corresponding true labels."""
 
-    assert (
-        error_type in SUPPORTED_ERROR_TYPES
-    ), f"""
+    assert error_type in SUPPORTED_ERROR_TYPES, f"""
         Supported error types: {SUPPORTED_ERROR_TYPES}. Got: {error_type}.
     """
     error = labels - preds

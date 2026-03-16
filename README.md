@@ -83,7 +83,7 @@ Additionally, `UNIQUE` also generates graphical outputs in the form of tables an
 
 For more hands-on examples and detailed usage, check out some of the examples in the [docs](https://opensource.nibr.com/UNIQUE/examples/index.html#examples).
 
-In addition, `example_usage/ADME_pulic/` contains files, scripts, and notebooks to reproduce the models and results for the ADME public dataset presented in "Uncertainty quantification in molecular machine learning for property predictions under data shifts" by Parrondo-Pizarro et al. 
+In addition, `example_usage/ADME_pulic/` contains files, scripts, and notebooks to reproduce the models and results for the ADME public dataset presented in "Uncertainty quantification in molecular machine learning for property predictions under data shifts" by Parrondo-Pizarro et al.
 
 ## Deep Dive
 

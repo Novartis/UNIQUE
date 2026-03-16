@@ -67,9 +67,7 @@ def calculate_proportions(
     y_std = np.sqrt(y_variance)
 
     strategies = ["uniform", "quantile"]
-    assert (
-        strategy in strategies
-    ), f"""
+    assert strategy in strategies, f"""
         Unsupported strategy. Supported strategies: {strategies}.
         Got: strategy={strategy}.
     """

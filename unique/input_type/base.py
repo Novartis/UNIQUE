@@ -130,11 +130,9 @@ class UniqueInputType:
             )  # List[str]
             for metric in self.metrics:
                 if metric not in self.supported_metrics.keys():
-                    raise ValueError(
-                        f"""Please, provide a valid (list of) metric(s).
+                    raise ValueError(f"""Please, provide a valid (list of) metric(s).
                         Supported metrics: {list(self.supported_metrics.keys())}.
-                        Got: "{metric}"."""
-                    )
+                        Got: "{metric}".""")
                 metrics_to_compute[metric] = self.supported_metrics[metric]
         else:
             # If no metrics are specified, compute all supported metrics

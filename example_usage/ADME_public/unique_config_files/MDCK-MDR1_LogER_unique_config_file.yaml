@@ -35,7 +35,7 @@ inputs_list:
     column_name: latent_fp_scaled
     metrics:
     - manhattan_distance
-    
+
 - ModelInputType:
       # Name of the column containing the variance
     column_name: variance

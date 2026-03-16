@@ -58,12 +58,10 @@ class AnalyticsMode:
     def __init__(self, mode: str):
         self.mode = mode.lower()
         if self.mode not in [self.COMPACT, self.EXTENDED, self.FULL]:
-            raise ValueError(
-                f"""
+            raise ValueError(f"""
                     Allowed analysis modalities: [{self.COMPACT}, {self.EXTENDED}, {self.FULL}].
                     Got: {self.mode}.
-                """
-            )
+                """)
 
         self.explaination = self.EXPLAINATION[self.mode]
 
@@ -173,9 +171,7 @@ def convert_distances_to_variances(
         A np.ndarray object containing the corresponding distances converted to variances.
     """
     # Check that calibration set exists
-    assert "CALIBRATION" in np.unique(
-        which_set
-    ), f""""
+    assert "CALIBRATION" in np.unique(which_set), f""""
         Please, provide a calibration set on which to compute the Calibrated NLL.
         You can specify it in the ``which_set`` parameter.
         Got: {np.unique(which_set)}.
