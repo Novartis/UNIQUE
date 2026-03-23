@@ -26,4 +26,3 @@ chemprop predict \
     --preds-path ../MDR1_model/predictions.csv \
     --smiles-columns "Structure" \
     --uncertainty-method ensemble
-

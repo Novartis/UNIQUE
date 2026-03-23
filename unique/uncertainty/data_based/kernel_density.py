@@ -57,14 +57,10 @@ class KernelDensityEstimation(DataBasedUncertaintyMetric):
 
     def __post_init__(self):
         super().__post_init__()
-        assert (
-            self.kernel is not None
-        ), """
+        assert self.kernel is not None, """
             Please, specify a kernel to use for the KDE computation.
         """
-        assert (
-            self.distance is not None
-        ), """
+        assert self.distance is not None, """
             Please, specify a distance metric to use for the KDE computation.
         """
 

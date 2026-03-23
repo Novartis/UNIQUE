@@ -302,9 +302,7 @@ class RankingBasedEvaluation(UniqueUncertaintyEvaluation):
         )
 
         if self.perf_metric is not None:
-            assert (
-                self.perf_metric in self.supported_performance_metrics
-            ), f"""
+            assert self.perf_metric in self.supported_performance_metrics, f"""
                 Unrecognized evaluation metric. Supported evaluation metrics:
                 {self.supported_performance_metrics}.
                 Got: {self.perf_metric}.
@@ -594,9 +592,7 @@ class CalibrationBasedEvaluation(UniqueUncertaintyEvaluation):
     def __post_init__(self):
         super().__post_init__()
 
-        assert (
-            self.problem_type != "classification"
-        ), """
+        assert self.problem_type != "classification", """
             Calibration-based evaluation metrics for classification problems have not
             been implemented yet.
         """

@@ -121,9 +121,7 @@ def get_indices_bin(
         A list of arrays containing each bin's indices.
     """
     ORDERS = ("increasing", "decreasing", "within")
-    assert (
-        order in ORDERS
-    ), f"""
+    assert order in ORDERS, f"""
         Unsupported ordering criteria. Supported values: {ORDERS}.
         Got: order={order}.
     """
@@ -207,9 +205,7 @@ def get_performance_per_bin(
     """
 
     if average:
-        assert (
-            problem_type == "regression"
-        ), f"""
+        assert problem_type == "regression", f"""
             Returning the average value for the performance metrics is only supported
             for regression problems (``problem_type="regression"``).
             Got problem_type={problem_type}.

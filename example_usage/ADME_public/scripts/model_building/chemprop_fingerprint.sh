@@ -26,6 +26,3 @@ chemprop fingerprint \
     --output ../MDR1_model/latent_fps.csv \
     --smiles-columns "Structure" \
     --ffn-block-index 0
-
-
-

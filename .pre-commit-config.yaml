@@ -3,7 +3,7 @@ default_language_version:
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v6.0.0
     hooks:
       - id: check-json
         name: Checking .json files are parseable
@@ -16,12 +16,12 @@ repos:
       - id: end-of-file-fixer
         name: Ensuring files are either empty or ending in a newline
   - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 24.2.0
+    rev: 26.3.1
     hooks:
       - id: black
         name: Ensuring Python code is PEP8-compliant using Black
   - repo: https://github.com/pycqa/isort
-    rev: 5.13.2
+    rev: 8.0.1
     hooks:
       - id: isort
         name: Sorting imports in Python files using isort
