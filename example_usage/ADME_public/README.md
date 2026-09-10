@@ -1,4 +1,4 @@
-# Uncertainty quantification in molecular machine learning for property predictions under data shifts, and error models for uncertainty quantification in molecular machine learning
+# Uncertainty quantification and error models for molecular machine learning property predictions
 
 ---
 
