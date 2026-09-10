@@ -4,11 +4,12 @@
 *.stdf
 .DS*
 ._.DS*
-notebooks/**/*.csv
-notebooks/**/*.pkl
-notebooks/**/*.json
-notebooks/**/output/*
-notebooks/**/*unique_error_model*
+example_usage/**/*.csv
+example_usage/**/*.pkl
+example_usage/**/*.json
+example_usage/**/output/*
+example_usage/**/*unique_error_model*
+example_usage/**/*_model*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
