@@ -64,6 +64,7 @@ CONFIG_FIELDS = (
     "mode",
     "inputs_list",
     "error_models_list",
+    "random_state",
     "individual_plots",
     "summary_plots",
     "save_plots",
@@ -124,6 +125,10 @@ class Pipeline:
             Either a list of already-initialized UNIQUE error models or a list of
             dictionaries specifying the parameters for each UNIQUE error model to
             initialize and use. Default: None.
+        random_state (int, 42):
+            Random seed to inject into each error model's kwargs (as `random_state`) for
+            reproducibility, unless a `random_state` is already specified for that
+            error model. Default: 42.
         evaluate_test_only (bool):
             Whether to evaluate the UQ metrics on the test set only or using all
             the available data. Default: True.
@@ -143,6 +148,10 @@ class Pipeline:
             Display only works if `Pipeline.fit()` is called in a JupyterNotebook. Default: True.
         verbose (bool):
             If True, the logger will output DEBUG level messages. Default: False.
+        random_state (int, None):
+            Random seed to inject into each error model's kwargs (as `random_state`) for
+            reproducibility, unless a `random_state` is already specified for that
+            error model. Default: None.
     """
 
     data: Union[Path, str, pd.DataFrame]
@@ -158,6 +167,7 @@ class Pipeline:
     error_models_list: Optional[
         Union[Sequence[UniqueErrorModel], Sequence[Dict[str, Any]]]
     ] = None
+    random_state: Optional[int] = 42
     evaluate_test_only: bool = True
     n_bootstrap: Union[int, Tuple[int]] = (500,)
     individual_plots: bool = True
@@ -236,6 +246,7 @@ class Pipeline:
             problem_type=config["problem_type"],
             inputs_list=config["inputs_list"],
             error_models_list=config.get("error_models_list", None),
+            random_state=config.get("random_state", 42),
             evaluate_test_only=config.get("evaluate_test_only", True),
             n_bootstrap=config.get("n_bootstrap", 500),
             individual_plots=config.get("individual_plots", True),
@@ -715,18 +726,27 @@ class Pipeline:
         # If error_models are provided from config file, they will be a list of dicts,
         # with each dict being: key=UniqueErrorModel name, and value=kwargs (as dict themselves)
         if all(isinstance(em, Dict) for em in self.error_models_list):
-            self.error_models = [
-                error_models.__dict__[em](
-                    output_dir=self.output_path,
-                    which_set=self.data["which_set"].to_numpy(),
-                    predictions=self.data["predictions"].to_numpy().astype(np.float64),
-                    labels=self.data["labels"].to_numpy().astype(np.float64),
-                    input_features=self.error_model_features,
-                    **kw,
-                )
-                for error_model in self.error_models_list
-                for em, kw in error_model.items()
-            ]
+            self.error_models = []
+            for error_model in self.error_models_list:
+                for em, kw in error_model.items():
+                    # Inject Pipeline-level random_state unless explicitly overridden per-model
+                    if self.random_state is not None:
+                        kw = {
+                            **kw,
+                            "random_state": kw.get("random_state", self.random_state),
+                        }
+                    self.error_models.append(
+                        error_models.__dict__[em](
+                            output_dir=self.output_path,
+                            which_set=self.data["which_set"].to_numpy(),
+                            predictions=self.data["predictions"]
+                            .to_numpy()
+                            .astype(np.float64),
+                            labels=self.data["labels"].to_numpy().astype(np.float64),
+                            input_features=self.error_model_features,
+                            **kw,
+                        )
+                    )
         # Otherwise, if error models are provided "manually", they should be a list
         # of already instantiated UniqueErrorModel objects
         else:

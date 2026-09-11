@@ -58,6 +58,15 @@ error_models_list:
       # "l1" (=absolute error), "l2" (squared error), "unsigned"
     error_type_list:
     - l1
+    # UniqueLASSO is a Lasso regressor trained to predict the error between the original model's predictions and data labels
+- UniqueLASSO:
+      # All available arguments to the model can be specified here. See each model's documentation for the full list of arguments. If no hyperparameters are specified, UNIQUE will use the default ones
+    alpha: 0.0001
+      # List of error types to use as target values (note the hyphen). For each error type, a separate model will be built to predict it
+      # Supported errors are:
+      # "l1" (=absolute error), "l2" (squared error), "unsigned"
+    error_type_list:
+    - l1
 
 #######################
 # Evaluation Settings #
