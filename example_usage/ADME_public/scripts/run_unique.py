@@ -1,7 +1,7 @@
 """Run from this directory after activating the unique-env conda environment:
 
-    conda activate unique-env
-    python run_unique.py
+conda activate unique-env
+python run_unique.py
 """
 
 import pandas as pd

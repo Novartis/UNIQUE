@@ -731,12 +731,17 @@ class Pipeline:
                 for em, kw in error_model.items():
                     # Inject Pipeline-level random_state unless explicitly overridden per-model
                     if self.random_state is not None:
-                        kw = {**kw, "random_state": kw.get("random_state", self.random_state)}
+                        kw = {
+                            **kw,
+                            "random_state": kw.get("random_state", self.random_state),
+                        }
                     self.error_models.append(
                         error_models.__dict__[em](
                             output_dir=self.output_path,
                             which_set=self.data["which_set"].to_numpy(),
-                            predictions=self.data["predictions"].to_numpy().astype(np.float64),
+                            predictions=self.data["predictions"]
+                            .to_numpy()
+                            .astype(np.float64),
                             labels=self.data["labels"].to_numpy().astype(np.float64),
                             input_features=self.error_model_features,
                             **kw,
