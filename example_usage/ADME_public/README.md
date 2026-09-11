@@ -35,7 +35,7 @@ Multiple Jupyter notebooks tailored to specific procedures are included:
 * `Figures_PublicData.ipynb`: Reproduces the figures of the first manuscript for public data.
 * `Building_Error_Models.ipynb`: Trains additional error model confirguations to benchmark alternative input feature sets and input dataset sizes and compositions.
 * `Figures_ErrorModels_PublicData.ipynb`: Reproduces the figures of the second manuscript for public data.
-* `Feature_Importance_Analysis.ipynb`: Analyzes error models' explainability through Gini Importance and SHAP analysis.
+* `Understanding_Error_Models.ipynb`: Analyzes error models' feature importance and explainability through Gini Importance and SHAP analysis.
 
 ---
 
@@ -49,4 +49,4 @@ Multiple Jupyter notebooks tailored to specific procedures are included:
 5. Generate figures: `Figures_PublicData.ipynb`
 7. Train alternative error models: `Building_Error_Models.ipynb`
 8. Generate error model figures: `Figures_ErrorModels_PublicData.ipynb`
-9. Inspect error models' explainability: `Feature_Importance_Analysis.ipynb`
+9. Inspect error models' feature importance and explainability: `Understanding_Error_Models.ipynb`
